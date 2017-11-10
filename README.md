@@ -1,6 +1,16 @@
-# WebFrontend
+# Alternativ Methoden für Tierversuche
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+This project is part of a semester project "alternativ Methoden für Tierversuche".
+
+## Installation
+
+Dependencies: npm (install node.js, it comes with npm), ng cli.
+
+node.js: https://nodejs.org/en/
+
+ng cli: https://github.com/angular/angular-cli
+
+Run `npm install` where package.json is located.
 
 ## Development server
 
