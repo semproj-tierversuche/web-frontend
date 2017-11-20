@@ -20,12 +20,12 @@ export class SearchpageComponent implements OnInit {
       this.pmid = input;
       this.openConfirmBox();
     } else {
-      console.log("wrong pmid"); //change to error message
+      console.log('wrong pmid'); //change to error message
     }
   }
 
 
-  changeLanguage(){
+  changeLanguage() {
     var temp = this.firstLanguage;
     this.firstLanguage = this.secondLanguage;
     this.secondLanguage = temp;
