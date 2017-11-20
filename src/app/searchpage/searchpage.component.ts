@@ -13,21 +13,17 @@ export class SearchpageComponent implements OnInit {
   showConfirmBox = false;
   showAboutUsBox = false;
   showLanguageBox = false;
-  showErrorMessage= false;
 
   enterPmid(input){
     this.closeConfirmBox();
-    console.log(this.showErrorMessage);
     if(this.isInputValid(input)){
       this.pmid = input;
       this.openConfirmBox();
-    } else this.incorrectPmid();
+    } else {
+      console.log("wrong pmid"); //change to error message
+    }
   }
 
-  incorrectPmid(){
-    //this.showErrorMessage = true;
-    setTimeout(function(){ this.showErrorMessage = false;}, 3000);
-  }
 
   changeLanguage(){
     var temp = this.firstLanguage;
