@@ -17,7 +17,7 @@ export class SearchpageComponent implements OnInit {
 
   enterPmid(input){
     this.closeConfirmBox();
-    if(this.isInputValid(input)){
+    if (this.isInputValid(input)){
       this.pmid = input;
       this.openConfirmBox();
     } else {
@@ -50,11 +50,16 @@ export class SearchpageComponent implements OnInit {
   }
 
   isInputValid(input){
-    if(Number.isInteger(Number(input)) &&
+    if (Number.isInteger(Number(input)) &&
       Number(input).toString().length == 8){
         return true;
-    };
+    }
     return false;
+  }
+
+  deleteMeLater(){
+    let i = 0;
+    i++;
   }
 
   constructor() { }
