@@ -1,0 +1,90 @@
+
+<!-- Container fills the whole page -->
+
+<div id="container">
+
+    <!-- Header <- two logos and menu box(about us, languages).
+     Full menu box: its border, about us text and choice for languages,
+     shows only on click. -->
+
+    <div id="header" class="middle">
+
+        <div id="logoText">
+          semantic search for<br />
+          alternative methods<br />
+          to animal testing
+        </div>
+
+      <img id="logo" class="middle" src="assets/images/logo1.png">
+
+      <div id="menu">
+
+
+        <button  id="aboutUs" (click)="openAboutUsBox()" class="menuButton">ABOUT US</button>
+
+        <div id="aboutUsBox" *ngIf= "showAboutUsBox">
+          <p id="textAboutUs">The 3Rs principle (Refinement, Reduction & Replacement)
+            is a central tenant for high quality science that incorporates innovative
+            non-animal methodologies wherever possible. It is explicit in EU and international
+            legislation, and the application of 3Rs is a desirable framework for meaningful
+            biomedical insights. In this context, there is a growing focus in both academic and
+            industrial sectors, on the development of alternative approaches which reduce or
+            avoid the use of animals. A driving force is the urgent need for better models
+            that reflect human biology and physiology with greater accuracy.</p>
+        </div>
+
+        <div id="languageBox">
+          <button id="firstLanguage" class="menuButton" (click)= "openLanguageBox()">{{firstLanguage}}</button>
+          <button id="secondLanguage" class="menuButton" (click)= "changeLanguage()"
+                  *ngIf= "showLanguageBox">{{secondLanguage}}</button>
+          <div id="languageBorder" *ngIf= "showLanguageBox"> </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- Content - grey box. Inside it:
+    1.user input field and a search button. Both wrapped in one div to make spacing easier.
+    2.Confirmation box. Appears on enter or 'search' button is clicked.
+    -->
+
+    <div id="content" class="middle">
+      <div id="searchBoxWrapper" class="centered">
+
+
+        <input #searchBox (keyup.enter)="enterPmid(searchBox.value)"  class="text-line" placeholder="enter PMID example: 25684017" />
+
+        <button (click)= "enterPmid(searchBox.value)" id="search" class="button-small-black">search</button>
+
+        <div id="errorMessage" *ngIf="showErrorMessage">there is no article in pubMed with this ID</div>
+
+      </div>
+
+
+      <!-- Confimation box
+      -has text inside: Article id, PMID, Author of an article.
+      -disappears when close button('x') or 'confirm' button is clicked
+      -->
+
+      <div id="confirmBox" class="centered" *ngIf = "showConfirmBox">
+
+        <button id="closeButton" (click)= "closeConfirmBox()">x</button>
+
+        <p id="articleInformation">
+          This article has a title:<br /> <br />
+          ID: {{pmid}}<br /><br />
+          Author:
+        </p>
+
+        <button (click)= "closeConfirmBox()" id="confirmButton" class="button-small-black middle">continue</button>
+      </div>
+
+      </div>
+
+    </div>
+
+
+
