@@ -8,6 +8,7 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { ResultPageComponent } from './result-page/result-page.component';
 import { ComparePageComponent } from './compare-page/compare-page.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ComparePageComponent } from './compare-page/compare-page.component';
     SearchFieldComponent,
     ResultTableComponent,
     ResultPageComponent,
-    ComparePageComponent
+    ComparePageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
