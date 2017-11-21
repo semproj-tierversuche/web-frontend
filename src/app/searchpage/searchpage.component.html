@@ -7,43 +7,43 @@
      Full menu box: its border, about us text and choice for languages,
      shows only on click. -->
 
-    <div id="header" class="middle">
+    <!--<div id="header" class="middle">-->
 
-        <div id="logoText">
-          semantic search for<br />
-          alternative methods<br />
-          to animal testing
-        </div>
+        <!--<div id="logoText">-->
+          <!--semantic search for<br />-->
+          <!--alternative methods<br />-->
+          <!--to animal testing-->
+        <!--</div>-->
 
-      <img id="logo" class="middle" src="assets/images/logo1.png">
+      <!--<img id="logo" class="middle" src="assets/images/logo1.png">-->
 
-      <div id="menu">
-
-
-        <button  id="aboutUs" (click)="openAboutUsBox()" class="menuButton">ABOUT US</button>
-
-        <div id="aboutUsBox" *ngIf= "showAboutUsBox">
-          <p id="textAboutUs">The 3Rs principle (Refinement, Reduction & Replacement)
-            is a central tenant for high quality science that incorporates innovative
-            non-animal methodologies wherever possible. It is explicit in EU and international
-            legislation, and the application of 3Rs is a desirable framework for meaningful
-            biomedical insights. In this context, there is a growing focus in both academic and
-            industrial sectors, on the development of alternative approaches which reduce or
-            avoid the use of animals. A driving force is the urgent need for better models
-            that reflect human biology and physiology with greater accuracy.(PLACEHOLDER)</p>
-        </div>
-
-        <div id="languageBox">
-          <button id="firstLanguage" class="menuButton" (click)= "openLanguageBox()">{{firstLanguage}}</button>
-          <button id="secondLanguage" class="menuButton" (click)= "changeLanguage()"
-                  *ngIf= "showLanguageBox">{{secondLanguage}}</button>
-          <div id="languageBorder" *ngIf= "showLanguageBox"> </div>
-
-        </div>
+      <!--<div id="menu">-->
 
 
-      </div>
-    </div>
+        <!--<button  id="aboutUs" (click)="openAboutUsBox()" class="menuButton">ABOUT US</button>-->
+
+        <!--<div id="aboutUsBox" *ngIf= "showAboutUsBox">-->
+          <!--<p id="textAboutUs">The 3Rs principle (Refinement, Reduction & Replacement)-->
+            <!--is a central tenant for high quality science that incorporates innovative-->
+            <!--non-animal methodologies wherever possible. It is explicit in EU and international-->
+            <!--legislation, and the application of 3Rs is a desirable framework for meaningful-->
+            <!--biomedical insights. In this context, there is a growing focus in both academic and-->
+            <!--industrial sectors, on the development of alternative approaches which reduce or-->
+            <!--avoid the use of animals. A driving force is the urgent need for better models-->
+            <!--that reflect human biology and physiology with greater accuracy.(PLACEHOLDER)</p>-->
+        <!--</div>-->
+
+        <!--<div id="languageBox">-->
+          <!--<button id="firstLanguage" class="menuButton" (click)= "openLanguageBox()">{{firstLanguage}}</button>-->
+          <!--<button id="secondLanguage" class="menuButton" (click)= "changeLanguage()"-->
+                  <!--*ngIf= "showLanguageBox">{{secondLanguage}}</button>-->
+          <!--<div id="languageBorder" *ngIf= "showLanguageBox"> </div>-->
+
+        <!--</div>-->
+
+
+      <!--</div>-->
+    <!--</div>-->
 
 
     <!-- Content - grey box. Inside it:
