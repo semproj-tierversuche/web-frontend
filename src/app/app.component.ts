@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
+import 'hammerjs';
 
 @Component({
   selector: 'app-root',
