@@ -14,6 +14,7 @@ import {MaterialAngularModule} from './material/material.angular';
 import {RouterModule, Routes} from '@angular/router';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
+import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
 
 const appRoutes: Routes = [
   { path: 'results', component: ResultPageComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     ComparePageComponent,
     NavigationComponent,
     AboutPageComponent,
-    InfoPageComponent
+    InfoPageComponent,
+    ConfirmationComponentComponent
   ],
   imports: [
     BrowserModule,

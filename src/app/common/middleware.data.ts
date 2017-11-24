@@ -1,3 +1,6 @@
+/*
+  Is the User Input publication.
+ */
 export interface Origin {
   Abstract: string[];
   Annotations: any[];
@@ -16,8 +19,11 @@ export interface Origin {
   Title: string;
 }
 
+/*
+
+ */
 export interface Matching {
-  AnimalTest: string;
+  AnimalTest: string; // YES/NO/BOTH
   Relevance: number;
   Similar: boolean;
 }

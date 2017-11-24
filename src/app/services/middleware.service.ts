@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import {MiddlewareData} from '../common/middleware.data';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class MiddlewareService {
 
   constructor() { }
 
-  getResults(pmid: string): MiddlewareData {
+  getExampleResults(): MiddlewareData {
     return this.exampleResponse();
+  }
+
+  getResults(pmid: number): Observable<MiddlewareData> {
+    return Observable.create(observer => {
+      observer.next(this.exampleResponse());
+      observer.complete();
+    });
   }
 
 
