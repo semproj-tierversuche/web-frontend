@@ -1,5 +1,6 @@
 ///<reference path="../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit} from '@angular/core';
+import {MiddlewareData} from '../common/middleware.data';
 
 @Component({
   selector: 'app-searchpage',
@@ -14,6 +15,7 @@ export class SearchpageComponent implements OnInit {
   showConfirmBox = false;
   showAboutUsBox = false;
   showLanguageBox = false;
+  middlewareData: MiddlewareData;
 
   enterPmid(input){
     this.closeConfirmBox();
@@ -65,6 +67,10 @@ export class SearchpageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  userConfirmed() {
+    // User pressed Ok
   }
 
 }
