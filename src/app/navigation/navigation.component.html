@@ -1,3 +1,23 @@
-<p>
-  navigation works!
-</p>
+<head>
+  <meta name="viewport" content="width=device-width">
+</head>
+<div class="wrap">
+  <nav>
+    <ul class="primary">
+      <li>
+        <a routerLink="/search" routerLinkActive="active">Search</a>
+      </li>
+      <li>
+        <img id="logo" class="middle" src="assets/images/logo1.png">
+      </li>
+
+      <li class="right">
+        <a routerLink="/info" routerLinkActive="active">Info</a>
+      </li>
+      <li class="right">
+        <a routerLink="/about" routerLinkActive="active">About</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet class="router-outlet"></router-outlet>
+</div>

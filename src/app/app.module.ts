@@ -9,6 +9,18 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { ResultPageComponent } from './result-page/result-page.component';
 import { ComparePageComponent } from './compare-page/compare-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialAngularModule} from './material/material.angular';
+import {RouterModule, Routes} from '@angular/router';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { InfoPageComponent } from './info-page/info-page.component';
+
+const appRoutes: Routes = [
+  { path: 'results', component: ResultPageComponent },
+  { path: 'search',      component: SearchpageComponent },
+  {path: 'about', component: AboutPageComponent},
+  {path: 'info', component: InfoPageComponent}
+];
 
 @NgModule({
   declarations: [
@@ -18,11 +30,16 @@ import { NavigationComponent } from './navigation/navigation.component';
     ResultTableComponent,
     ResultPageComponent,
     ComparePageComponent,
-    NavigationComponent
+    NavigationComponent,
+    AboutPageComponent,
+    InfoPageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialAngularModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
