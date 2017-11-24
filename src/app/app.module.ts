@@ -9,7 +9,6 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { ResultPageComponent } from './result-page/result-page.component';
 import { ComparePageComponent } from './compare-page/compare-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialAngularModule} from './material/material.angular';
 import {RouterModule, Routes} from '@angular/router';
@@ -38,7 +37,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule.forRoot(),
     BrowserAnimationsModule,
     MaterialAngularModule,
     RouterModule.forRoot(appRoutes)

@@ -52,10 +52,10 @@ ul:after {
 nav {
   position: relative;
   background: #2B2B2B;
-  background-image: -webkit-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
-  background-image: -moz-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
-  background-image: -o-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
-  background-image: linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
+  background-image: -webkit-linear-gradient(to bottom, #2B2B2B 7%, #333333 100%);
+  background-image: -moz-linear-gradient(to bottom, #2B2B2B 7%, #333333 100%);
+  background-image: -o-linear-gradient(to bottom, #2B2B2B 7%, #333333 100%);
+  background-image: linear-gradient(to bottom, #2B2B2B 7%, #333333 100%);
   text-align: center;
   /*letter-spacing: 1px;*/
   text-shadow: 1px 1px 1px #0E0E0E;
