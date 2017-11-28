@@ -1,6 +1,7 @@
 ///<reference path="../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit} from '@angular/core';
 import {MiddlewareData} from '../common/middleware.data';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-searchpage',
@@ -23,7 +24,7 @@ export class SearchpageComponent implements OnInit {
       this.pmid = input;
       this.openConfirmBox();
     } else {
-      console.log('wrong pmid'); //change to error message
+      console.log('wrong pmid'); // change to error message
     }
   }
 
@@ -64,13 +65,13 @@ export class SearchpageComponent implements OnInit {
     i++;
   }
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
 
   userConfirmed() {
-    // User pressed Ok
+    this.router.navigate(['/result', this.pmid]);
   }
 
 }

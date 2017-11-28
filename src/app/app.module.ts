@@ -15,13 +15,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
-
-const appRoutes: Routes = [
-  { path: 'results', component: ResultPageComponent },
-  { path: 'search',      component: SearchpageComponent },
-  {path: 'about', component: AboutPageComponent},
-  {path: 'info', component: InfoPageComponent}
-];
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +35,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MaterialAngularModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
