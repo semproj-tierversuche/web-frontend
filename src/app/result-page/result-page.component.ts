@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-result-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultPageComponent implements OnInit {
 
-  constructor() { }
+  pmid: number;
+  private sub: any;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.pmid = +params['pmid'];
+      // dispatch action to load the details here.
+    });
   }
 
 }
