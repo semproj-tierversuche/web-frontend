@@ -1,7 +1,8 @@
 ///<reference path="../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit} from '@angular/core';
-import {MiddlewareData} from '../common/middleware.data';
-import {Router} from '@angular/router';
+import { Origin } from '../common/middleware.data';
+import { Router } from '@angular/router';
+import { MiddlewareService} from '../services/middleware.service';
 
 @Component({
   selector: 'app-searchpage',
@@ -11,63 +12,25 @@ import {Router} from '@angular/router';
 export class SearchpageComponent implements OnInit {
 
   pmid: number;
-  firstLanguage = 'EN';
-  secondLanguage = 'DE';
-  showConfirmBox = false;
-  showAboutUsBox = false;
-  showLanguageBox = false;
-  middlewareData: MiddlewareData;
+  metaData: Origin;
 
-  enterPmid(input){
-    this.closeConfirmBox();
-    if (this.isInputValid(input)){
-      this.pmid = input;
-      this.openConfirmBox();
+  constructor(public router: Router, public middlewareService: MiddlewareService) { }
+
+  ngOnInit() { }
+
+  // recieves pmid from searchField component -EventEmitter
+  recievePmid($event) {
+    this.pmid = $event;
+    if (this.pmid != null) {
+       this.getResponse(this.pmid);
     } else {
-      console.log('wrong pmid'); // change to error message
+      this.metaData = undefined;
     }
   }
 
-
-  changeLanguage() {
-    const temp = this.firstLanguage;
-    this.firstLanguage = this.secondLanguage;
-    this.secondLanguage = temp;
-    this.openLanguageBox();
-  }
-
-  openConfirmBox(){
-    this.showConfirmBox = true;
-  }
-
-  closeConfirmBox(){
-    this.showConfirmBox = false;
-  }
-
-  openAboutUsBox(){
-    this.showAboutUsBox = !this.showAboutUsBox;
-  }
-
-  openLanguageBox(){
-    this.showLanguageBox = !this.showLanguageBox;
-  }
-
-  isInputValid(input){
-    if (Number.isInteger(Number(input)) &&
-      Number(input).toString().length == 8){
-        return true;
-    }
-    return false;
-  }
-
-  deleteMeLater(){
-    let i = 0;
-    i++;
-  }
-
-  constructor(public router: Router) { }
-
-  ngOnInit() {
+  // call method from middleWareService for metadata and save it to this.metaData
+  getResponse(pmid: number) {
+    this.middlewareService.getInputMetaData(pmid).subscribe(res => this.metaData = res);
   }
 
   userConfirmed() {

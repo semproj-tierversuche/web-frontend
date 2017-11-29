@@ -1,3 +1,11 @@
-<p>
-  search-field works!
-</p>
+
+<div id="searchFieldWrapper">
+
+  <input #searchBox (keyup.enter)="enterPmid(searchBox.value)"  class="text-line" placeholder="enter PMID example: 25684017" />
+
+  <button (click)= "enterPmid(searchBox.value)" id="search" class="button-small-black">search</button>
+
+  <div id="errorMessage">given pubMed ID does not exist</div>
+
+</div>
+

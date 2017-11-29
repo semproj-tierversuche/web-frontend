@@ -180,20 +180,6 @@ ul.primary li:hover > a{
 
 }
 
-.text-line {
-  background-color: transparent;
-  font-size: 15px;
-  color: #000000;
-  outline: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid #000000 1px;
-  padding: 3px 10px;
-  width: 230px;
-  height: 20px;
-}
-
 .middle {
   position: absolute;
   left: 50%;
