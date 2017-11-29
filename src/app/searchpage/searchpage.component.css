@@ -1,12 +1,3 @@
-
-#searchField {
-  top: 35%;
-}
-
-#confirmBox {
-  top: 55%
-}
-
 #content {
   background-color: #f0f0f0;
   position: absolute;
@@ -18,6 +9,18 @@
 
 #container {
   background-color: white;
+}
+
+#searchWrapper {
+  height: 290px;
+  width: 400px;
+  position: relative;
+  top: 30%
+}
+
+#confirmBox {
+  position: relative;
+  top: 80px;
 }
 
 .middle {

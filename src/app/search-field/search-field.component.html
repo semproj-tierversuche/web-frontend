@@ -1,9 +1,11 @@
 
 <div id="searchFieldWrapper">
 
-  <input #searchBox (keyup.enter)="enterPmid(searchBox.value)"  class="text-line" placeholder="enter PMID example: 25684017" />
+  <input #searchBox (keyup.enter)="enterPmid(searchBox.value)"  id="text-line" placeholder="enter PMID example: 25684017" />
 
   <button (click)= "enterPmid(searchBox.value)" id="search" class="button-small-black">search</button>
+
+  <button (click)= "exampleInput()" id="example">search by example: 11489449</button>
 
   <div id="errorMessage">given pubMed ID does not exist</div>
 

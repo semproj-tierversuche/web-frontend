@@ -49,10 +49,15 @@ export class SearchFieldComponent implements OnInit {
   // checks if pmid is a 8 digit number
   isInputValid(input): boolean {
     if (Number.isInteger(Number(input)) &&
-      Number(input).toString().length === 8) {
+      input.length <= 8) {
       return true;
     }
     return false;
+  }
+
+  exampleInput() {
+    (<HTMLInputElement>document.getElementById('text-line')).value = '11489449';
+    this.enterPmid('11489449');
   }
 
 }

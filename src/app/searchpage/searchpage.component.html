@@ -1,19 +1,18 @@
-
 <!-- Container fills the whole page -->
 
 <div id="container">
 
-    <!-- Header <- two logos and menu box(about us, languages).
-     Full menu box: its border, about us text and choice for languages,
-     shows only on click. -->
+  <!-- Header <- two logos and menu box(about us, languages).
+   Full menu box: its border, about us text and choice for languages,
+   shows only on click. -->
 
-    <!-- Content - grey box. Inside it:
-    1.Search field as single component
-    2.Confirmation box. Appears on enter or 'search' button is clicked.
-    -->
+  <!-- Content - grey box. Inside it:
+  1.Search field as single component
+  2.Confirmation box. Appears on enter or 'search' button is clicked.
+  -->
+  <div id="content" class="middle">
 
-    <div id="content" class="middle">
-
+    <div id="searchWrapper" class="middle">
       <app-search-field id="searchField" class="middle" (pmidEvent)="recievePmid($event)"></app-search-field>
 
       <!-- Confimation box
@@ -21,8 +20,10 @@
       -disappears when close button('x') or 'confirm' button is clicked
       -->
 
-      <app-confirmation-component [metaData] = 'metaData' (userConfirmed)="userConfirmed()" id="confirmBox" class="middle" ></app-confirmation-component>
-
-      </div>
-
+      <app-confirmation-component [metaData] = 'metaData' (userConfirmed)="userConfirmed()" id="confirmBox"></app-confirmation-component>
     </div>
+
+  </div>
+
+</div>
+

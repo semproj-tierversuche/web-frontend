@@ -2,12 +2,17 @@
 <div *ngIf = 'metaData' id="confirmBox">
   <button id="closeButton" (click) = close() >x</button>
 
-  <p id="articleInformation">
-    <b>This article has a title:</b><br />
-    {{metaData.Title}}<br /><br />
-    <b>ID:</b> {{metaData.PMID}} <br />
-    <b>Authors:</b> {{metaData.Authors}}
-  </p>
+  <div id="articleInformation">
+
+    <p class="thinSpacer"><b>This article has a title:</b></p>
+    <p class="doubleSpacer">  {{metaData.Title}}</p>
+
+    <p class = "thinSpacer"><b>ID: </b>{{metaData.PMID}}</p>
+
+    <p class = "thinSpacer"><b>Authors: </b>{{metaData.Authors}}</p>
+
+  </div>
 
   <button (click)= 'confirm()' id="confirmButton" class="button-small-black middle">continue</button>
 </div>
+
