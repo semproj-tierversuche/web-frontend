@@ -1,6 +1,11 @@
 <h1>hello</h1>
-  <table class ="table table-hover">
-    <div style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 800px;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<table class ="table table-hover">
+  <div style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 800px;" class="class=w3-container">
+
       <thead>
         <tr>
           <td> Relevance </td>
@@ -8,19 +13,25 @@
           <td>Publication Title</td>
         </tr>
       </thead>
+  <tbody>
 
-      <tbody>
-      <!-- For Schleife durch die example results -->
+  <div class="w3-container">
+            <tr *ngFor="let data of middlewareData.Results" (click)="onClick()">
+              <td>
+                <div class="w3-light-grey">
+                  <div class="w3-container w3-green w3-center" style="width:{{data.Matching.Relevance}}%">{{data.Matching.Relevance}}%
+                  </div>
+                </div><br>
+              </td>
+              <td> {{data.Matching.AnimalTest}} </td>
+              <td>{{data.Record.Title}}</td>
+            </tr>
+          </div>
 
-        <tr *ngFor="let data of middlewareData.Results" (click)="onClick()">
-          <td> {{data.Matching.Relevance}} </td>
-          <td> {{data.Matching.AnimalTest}} </td>
-          <td>{{data.Record.Title}}</td>
-        </tr>
+    </tbody>
+  </div>
 
-      </tbody>
-    </div>
-  </table>
+</table>
 
 
 <caption>RESULTS</caption>
@@ -29,7 +40,6 @@
     </td>
 
   </tbody>
-
 
 
 
