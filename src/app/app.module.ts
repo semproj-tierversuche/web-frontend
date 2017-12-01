@@ -18,7 +18,6 @@ import { InfoPageComponent } from './info-page/info-page.component';
 import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import {MiddlewareService} from './services/middleware.service';
 
 const appRoutes: Routes = [
   { path: 'results', component: ResultPageComponent },
