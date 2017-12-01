@@ -29,6 +29,7 @@ export class MiddlewareService {
 
   private exampleResponse(): MiddlewareData {
     const example: MiddlewareData = {
+      // Input Publication
       'Origin': {
         'Abstract': [
           'This study investigated whether memantine, a non-competitive NMDA receptor antagonist is neuroprotective after traumatic brain injury (TBI) induced in adult rats with a controlled cortical impact device. TBI led to significant neuronal death in the hippocampal CA2 and CA3 regions (by 50 and 59%, respectively), by 7 days after the injury. Treatment of rats with memantine (10 and 20 mg/Kg, i.p.) immediately after the injury significantly prevented the neuronal loss in both CA2 and CA3 regions. This is the first study showing the neuroprotective potential of memantine to prevent the TBI-induced neuronal damage.'
@@ -69,7 +70,8 @@ export class MiddlewareService {
         'Suggest': '',
         'TextminingVersion': '0',
         'Title': 'Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.'
-      },
+    },
+        // Output Publication
       'Results': [
         {
           'Matching': {
