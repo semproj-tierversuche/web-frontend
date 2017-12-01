@@ -1,6 +1,6 @@
 # Alternativ Methoden für Tierversuche
 
-This project is part of a semester project "alternativ Methoden für Tierversuche".
+This project is part of a semester project "alternativ Methoden für Tierversuche"!
 
 ## Installation
 
