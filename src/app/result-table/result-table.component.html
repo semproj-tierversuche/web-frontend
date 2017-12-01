@@ -14,29 +14,14 @@
 
   <tbody>
     <!-- Hier ngFor schleife einfügen und middlewaredate durchiterieren! -->
-      <tr>
-        <td> {{example.Results[0].Matching.Relevance}}</td>
-        <td> {{example.Results[0].Matching.AnimalTest}}</td>
-        <td>{{example.Results[0].Record.Title}}</td>
-        <td>{{example.Results[0].Record.Date}}</td>
-        <td>{{example.Results[0].Record.Authors}}</td>
+      <tr *ngFor="let data of middlewareData.Results">
+        <td> {{data.Matching.Relevance}}</td>
+        <td> {{data.Matching.AnimalTest}}</td>
+        <td>{{data.Record.Title}}</td>
+        <td>{{data.Record.Date}}</td>
+        <td>{{data.Record.Authors}}</td>
       </tr>
 
-      <tr>
-        <td> {{example.Results[1].Matching.Relevance}}</td>
-        <td> {{example.Results[1].Matching.AnimalTest}}</td>
-        <td>{{example.Results[1].Record.Title}}</td>
-        <td>{{example.Results[1].Record.Date}}</td>
-        <td>{{example.Results[1].Record.Authors}}</td>
-      </tr>
-
-      <tr>
-        <td> {{example.Results[2].Matching.Relevance}}</td>
-        <td> {{example.Results[2].Matching.AnimalTest}}</td>
-        <td>{{example.Results[2].Record.Title}}</td>
-        <td>{{example.Results[2].Record.Date}}</td>
-        <td>{{example.Results[2].Record.Authors}}</td>
-      </tr>
     </tbody>
 
 </table>

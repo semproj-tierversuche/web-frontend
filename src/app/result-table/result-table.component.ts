@@ -8,14 +8,14 @@ import { MiddlewareService} from '../services/middleware.service';
   styleUrls: ['./result-table.component.css']
 })
 export class ResultTableComponent implements OnInit {
-  example: MiddlewareData;
+  middlewareData: MiddlewareData;
   constructor(private MiddlewareDataService: MiddlewareService) {
   }
   ngOnInit() {
     this.getMiddlewareDataService();
   }
   getMiddlewareDataService(): void {
-    this.example = this.MiddlewareDataService.getExampleResults();
+    this.middlewareData = this.MiddlewareDataService.getExampleResults();
   }
 
 }
