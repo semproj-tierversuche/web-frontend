@@ -2,9 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<caption>RESULTS</caption>
 
 <table class ="table table-hover">
-  <div style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 800px;" class="class=w3-container">
+
 
       <thead>
         <tr>
@@ -14,27 +15,28 @@
         </tr>
       </thead>
   <tbody>
-
-  <div class="w3-container">
-            <tr *ngFor="let data of middlewareData.Results" (click)="onClick()">
-              <td>
-                <div class="w3-light-grey">
-                  <div class="w3-container w3-green w3-center" style="width:{{data.Matching.Relevance}}%">{{data.Matching.Relevance}}%
-                  </div>
-                </div><br>
-              </td>
-              <td> {{data.Matching.AnimalTest}} </td>
-              <td>{{data.Record.Title}}</td>
-            </tr>
-          </div>
-
-    </tbody>
-  </div>
-
+    <div style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 600px">
+       <tr *ngFor="let data of middlewareData.Results" (click)="onClick()">
+         <td>
+            <div class="w3-light-grey">
+              <div class="w3-container w3-green w3-center" style="width:{{data.Matching.Relevance}}%">{{data.Matching.Relevance}}%
+              </div>
+            </div>
+         </td>
+         <td>
+           <p>{{data.Matching.AnimalTest}}</p>
+         </td>
+         <td>
+           <p>{{data.Record.Title}}</p>
+           <p>{{data.Record.Date}}</p>
+           <p>{{data.Record.Authors}}</p>
+         </td>
+         </tr>
+    </div>
+  </tbody>
 </table>
 
 
-<caption>RESULTS</caption>
 
     <td><img id="logo" (click)="compareClick(data)" src="../../assets/ICONS/SearchIcon.ico"/>
     </td>
