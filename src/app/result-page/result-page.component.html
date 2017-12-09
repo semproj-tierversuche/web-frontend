@@ -1,1 +1,4 @@
-<app-result-table></app-result-table>
+<div>
+  <mat-spinner class="spinner" *ngIf="showLoadingAnimation"></mat-spinner>
+<app-result-table *ngIf="!showLoadingAnimation"></app-result-table>
+</div>

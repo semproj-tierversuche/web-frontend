@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { MiddlewareData } from '../common/middleware.data';
 import { MiddlewareService} from '../services/middleware.service';
 
@@ -8,14 +8,13 @@ import { MiddlewareService} from '../services/middleware.service';
   styleUrls: ['./result-table.component.css']
 })
 export class ResultTableComponent implements OnInit {
+
   middlewareData: MiddlewareData;
-  constructor(private MiddlewareDataService: MiddlewareService) {
-  }
-  ngOnInit() {
-    this.getMiddlewareDataService();
-  }
-  getMiddlewareDataService(): void {
-    this.middlewareData = this.MiddlewareDataService.getExampleResults();
+
+  constructor(private middlewareService: MiddlewareService) {
   }
 
+  ngOnInit() {
+    this.middlewareData = this.middlewareService.middlewareData;
+  }
 }

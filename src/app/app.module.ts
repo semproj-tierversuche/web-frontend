@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MiddlewareService} from './services/middleware.service'; // don't know if needed
+import { MiddlewareService} from './services/middleware.service';
 import { AppComponent } from './app.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
@@ -17,6 +17,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     MaterialAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [MiddlewareService],
   bootstrap: [AppComponent]

@@ -1,34 +1,46 @@
 import {Injectable} from '@angular/core';
 import {MiddlewareData, Origin} from '../common/middleware.data';
 import {Observable} from 'rxjs/Observable';
+import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class MiddlewareService {
 
-  constructor() {
+  private static middlewareUrl = 'http://localhost:5000/';
+  private static documentAPI = 'document/';
+  private static resultAPI = 'results/';
+
+  middlewareData: MiddlewareData;
+
+  constructor(private http: HttpClient) {
   }
 
   getExampleResults(): MiddlewareData {
     return this.exampleResponse();
   }
 
-  getInputMetaData(pmid: number): Observable<Origin> {
+  getExampleInputMetaData(pmid: number): Observable<Origin> {
     return Observable.create(observer => {
       observer.next(this.exampleOriginData());
       observer.complete();
     });
   }
 
-  getResults(pmid: number): Observable<MiddlewareData> {
-    return Observable.create(observer => {
-      observer.next(this.exampleResponse());
-      observer.complete();
-    });
+  getInputMetaData(pmid: number): Observable<Origin> {
+    return this.http.get<Origin>(MiddlewareService.middlewareUrl + MiddlewareService.documentAPI + pmid);
   }
 
+  getResults(pmid: number): Observable<MiddlewareData> {
+    return this.http.get<MiddlewareData>(MiddlewareService.middlewareUrl + MiddlewareService.resultAPI + pmid);
+  }
+
+  confirmMiddlewareData(data: MiddlewareData) {
+    this.middlewareData = data;
+  }
 
   private exampleResponse(): MiddlewareData {
-    const example: MiddlewareData = {
+    return {
       // Input Publication
       'Origin': {
         'Abstract': [
@@ -70,8 +82,8 @@ export class MiddlewareService {
         'Suggest': '',
         'TextminingVersion': '0',
         'Title': 'Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.'
-    },
-        // Output Publication
+      },
+      // Output Publication
       'Results': [
         {
           'Matching': {
@@ -742,7 +754,6 @@ export class MiddlewareService {
         }
       ]
     };
-    return example;
   }
 
   private exampleOriginData(): Origin {

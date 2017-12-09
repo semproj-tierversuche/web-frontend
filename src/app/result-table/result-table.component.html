@@ -12,9 +12,9 @@
   </thead>
 
 
-  <tbody>
+  <tbody *ngIf="middlewareData != null">
     <!-- Hier ngFor schleife einfügen und middlewaredate durchiterieren! -->
-      <tr *ngFor="let data of middlewareData.Results">
+      <tr  *ngFor="let data of middlewareData.Results">
         <td> {{data.Matching.Relevance}}</td>
         <td> {{data.Matching.AnimalTest}}</td>
         <td>{{data.Record.Title}}</td>
