@@ -1,41 +1,39 @@
-<h1>hello</h1>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<caption>RESULTS</caption>
-
-<table class ="table table-hover">
 
 
-      <thead>
-        <tr>
-          <td> Relevance </td>
-          <td> Animal Test / Alterternative Test </td>
-          <td>Publication Title</td>
-        </tr>
-      </thead>
-  <tbody>
-    <div style="OVERFLOW: auto; WIDTH: 100%; HEIGHT: 600px">
-       <tr *ngFor="let data of middlewareData.Results" (click)="onClick()">
-         <td>
-            <div class="w3-light-grey">
-              <div class="w3-container w3-green w3-center" style="width:{{data.Matching.Relevance}}%">{{data.Matching.Relevance}}%
-              </div>
-            </div>
-         </td>
-         <td>
-           <p>{{data.Matching.AnimalTest}}</p>
-         </td>
-         <td>
-           <p>{{data.Record.Title}}</p>
-           <p>{{data.Record.Date}}</p>
-           <p>{{data.Record.Authors}}</p>
-         </td>
-         </tr>
-    </div>
-  </tbody>
-</table>
+  <table class="table table-hover">
 
+    <tbody>
+    <tr *ngFor="let data of middlewareData.Results">
+
+      <td>
+        <div class="w3-light-grey">
+          <div id = "test" class="w3-container w3-green w3-center" style="width: 50%">   <!--hier dynamische prozentwerte eingeben-->
+            {{data.Matching.Relevance * 100}}%
+          </div>
+        </div>
+      </td>
+
+      <td>
+        <p>{{OutputTypeOfTest(data.Matching.AnimalTest)}}</p>
+      </td>
+
+      <td>
+        <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
+          {{data.Record.Title}} </a></p>
+        <p>{{data.Record.Date}}</p>
+        <p>{{data.Record.Authors}}</p>
+      </td>
+
+      <td><img id="logo" (click)="compareClick(data)" src="../../assets/ICONS/SearchIcon.ico"/>
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
 
 
     <td><img id="logo" (click)="compareClick(data)" src="../../assets/ICONS/SearchIcon.ico"/>

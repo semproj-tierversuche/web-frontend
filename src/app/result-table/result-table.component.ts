@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MiddlewareData } from '../common/middleware.data';
+import {MiddlewareData, Result} from '../common/middleware.data';
 import { MiddlewareService} from '../services/middleware.service';
 
 @Component({
@@ -16,5 +16,17 @@ export class ResultTableComponent implements OnInit {
 
   ngOnInit() {
     this.middlewareData = this.middlewareService.middlewareData;
+  }
+  getMiddlewareDataService(): void {
+    this.middlewareData = this.MiddlewareDataService.getExampleResults();
+  }
+  OutputTypeOfTest (animalTest: string) {     //umwandeln des Begriffs 'both' in 'Animal and Alternative Test'
+    if (animalTest === 'both') {
+      return 'Animal and Alternative Test';
+    } else {
+      return animalTest;
+    }
+  }
+  compareClick(data: Result) {          //hier kommt man durch das Klicken auf die Lupe hin
   }
 }
