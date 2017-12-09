@@ -20,13 +20,13 @@ export class ResultTableComponent implements OnInit {
   getMiddlewareDataService(): void {
     this.middlewareData = this.MiddlewareDataService.getExampleResults();
   }
-  OutputTypeOfTest (animalTest: string) {     //umwandeln des Begriffs 'both' in 'Animal and Alternative Test'
+  OutputTypeOfTest (animalTest: string) {     // umwandeln des Begriffs 'both' in 'Animal and Alternative Test'
     if (animalTest === 'both') {
       return 'Animal and Alternative Test';
     } else {
       return animalTest;
     }
   }
-  compareClick(data: Result) {          //hier kommt man durch das Klicken auf die Lupe hin
+  compareClick(data: Result) {                // hier kommt man durch das Klicken auf die Lupe hin
   }
 }
