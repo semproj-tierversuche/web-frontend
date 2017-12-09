@@ -5,6 +5,7 @@ import {MiddlewareService} from '../services/middleware.service';
 import {delay} from 'rxjs/operators';
 import {ResultTableComponent} from '../result-table/result-table.component';
 
+
 @Component({
   selector: 'app-result-page',
   templateUrl: './result-page.component.html',
@@ -37,5 +38,11 @@ export class ResultPageComponent implements OnInit {
         }
       }
     });
+  }
+
+  setPage(page: number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
   }
 }
