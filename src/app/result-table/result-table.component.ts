@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MiddlewareData } from '../common/middleware.data';
 import { MiddlewareService} from '../services/middleware.service';
 

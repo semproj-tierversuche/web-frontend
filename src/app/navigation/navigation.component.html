@@ -1,11 +1,11 @@
 <head>
   <meta name="viewport" content="width=device-width">
 </head>
-<div class="wrap">
-  <nav>
+<div id="wrap">
+  <nav id="navigation" class="middle">
     <ul class="primary">
-      <li>
-        <a routerLink="/search" routerLinkActive="active">Search</a>
+      <li id="search">
+        <a routerLink="/search" routerLinkActive="active">SEARCH</a>
       </li>
       <li>
         <a [routerLink]="['/result', '']" routerLinkActive="active">Result</a>
@@ -15,10 +15,10 @@
       </li>
 
       <li class="right">
-        <a routerLink="/info" routerLinkActive="active">Info</a>
+        <a id = "info" routerLink="/info" routerLinkActive="active">INFO</a>
       </li>
       <li class="right">
-        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a id = "about" routerLink="/about" routerLinkActive="active">ABOUT</a>
       </li>
     </ul>
   </nav>

@@ -59,5 +59,4 @@ export class SearchFieldComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('text-line')).value = '21494637';
     this.enterPmid('21494637');
   }
-
 }

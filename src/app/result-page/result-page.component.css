@@ -4,3 +4,18 @@
   transform: translate(-50%);
   top: 50%;
 }
+#content {
+  background-color: #f0f0f0;
+  position: absolute;
+  overflow: scroll;
+  top: 110px;
+  height: 75%;
+  width: 86%;
+  z-index: -1;
+}
+
+.middle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
