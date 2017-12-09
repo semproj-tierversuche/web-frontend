@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     AboutPageComponent,
     InfoPageComponent,
     ConfirmationComponentComponent,
-    PaginatorComponent
+
   ],
   imports: [
     BrowserModule,
