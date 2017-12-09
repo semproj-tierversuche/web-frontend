@@ -17,9 +17,7 @@ export class ResultTableComponent implements OnInit {
   ngOnInit() {
     this.middlewareData = this.middlewareService.middlewareData;
   }
-  getMiddlewareDataService(): void {
-    this.middlewareData = this.MiddlewareDataService.getExampleResults();
-  }
+
   OutputTypeOfTest (animalTest: string) {     // umwandeln des Begriffs 'both' in 'Animal and Alternative Test'
     if (animalTest === 'both') {
       return 'Animal and Alternative Test';
@@ -27,6 +25,7 @@ export class ResultTableComponent implements OnInit {
       return animalTest;
     }
   }
+
   compareClick(data: Result) {                // hier kommt man durch das Klicken auf die Lupe hin
   }
 }

@@ -29,7 +29,7 @@ export class ResultPageComponent implements OnInit {
         // This is to check if we came from navigation bar
         if (this.pmid !== 0) {
           this.showLoadingAnimation = true;
-          this.middlewareDataService.getResults(this.pmid).subscribe(data => {
+          this.middlewareDataService.getExampleResults(this.pmid).subscribe(data => {
             this.middlewareData = data;
             // Maybe we should just let service do all the work
             this.middlewareDataService.confirmMiddlewareData(data);

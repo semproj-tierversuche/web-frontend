@@ -16,8 +16,11 @@ export class MiddlewareService {
   constructor(private http: HttpClient) {
   }
 
-  getExampleResults(): MiddlewareData {
-    return this.exampleResponse();
+  getExampleResults(pmid: number): Observable<MiddlewareData> {
+    return Observable.create(observer => {
+      observer.next(this.exampleResponse());
+      observer.complete();
+    });
   }
 
   getExampleInputMetaData(pmid: number): Observable<Origin> {
