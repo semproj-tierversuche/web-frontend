@@ -1,0 +1,80 @@
+#closeButton {
+  position: relative;
+  float: right;
+  border: none;
+  background: none;
+}
+
+.headerText {
+  font: 13px "Heiti SC";
+  position: fixed;
+}
+
+#matchedArticleHeader {
+  left: 280px;
+}
+
+#keywords1{
+  font-size:12px;
+  top: 335px;
+}
+
+#keywords2{
+  font-size:12px;
+  top: 335px;
+  left: 280px;
+}
+
+#abstractTextWrapper {
+  height: 420px;
+  width: 500px;
+  top: 50px;
+}
+
+#inputArticle {
+  overflow-y: auto;
+  border: 1px solid black;
+  position: fixed;
+  float: left;
+  top: 20px;
+  height: 300px;
+  width: 220px;
+}
+
+#matchedArticle {
+  overflow-y: auto;
+  border: 1px solid black;
+  position: fixed;
+  left: 280px;
+  top: 20px;
+  height: 300px;
+  width: 220px;
+}
+
+#inputArticleKeywords {
+  overflow-y: auto;
+  border: 1px solid black;
+  position: fixed;
+  top: 350px;
+  height: 70px;
+  width: 220px;
+}
+
+#matchedArticleKeywords {
+  overflow-y: auto;
+  border: 1px solid black;
+  position: fixed;
+  top: 350px;
+  left: 280px;
+  height: 70px;
+  width: 220px;
+}
+
+.middle {
+  overflow-y: auto;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+button:focus {outline:0;}

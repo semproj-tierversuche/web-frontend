@@ -12,6 +12,9 @@
   -->
   <div id="content" class="middle">
 
+
+    <img src="assets/ICONS/detailsIcon.png" width="30px" height="30px" (click)="openDialog(null, null)">
+
     <div id="searchWrapper" class="middle">
       <app-search-field id="searchField" class="middle" (pmidEvent)="recievePmid($event)"></app-search-field>
 
@@ -19,7 +22,6 @@
       -has text inside: Article id, PMID, Author of an article.
       -disappears when close button('x') or 'confirm' button is clicked
       -->
-
       <app-confirmation-component [metaData] = 'metaData' (userConfirmed)="userConfirmed()" id="confirmBox"></app-confirmation-component>
     </div>
 

@@ -18,6 +18,8 @@ import { InfoPageComponent } from './info-page/info-page.component';
 import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
 
 
 const appRoutes: Routes = [
@@ -46,8 +48,15 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MaterialAngularModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatMenuModule
   ],
+
+  entryComponents: [
+    ComparePageComponent
+  ],
+
   providers: [MiddlewareService],
   bootstrap: [AppComponent]
 })

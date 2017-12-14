@@ -1,11 +1,31 @@
-
-<div id="searchFieldWrapper">
+<div id="searchFieldWrapper" xmlns="http://www.w3.org/1999/html">
 
   <input #searchBox (keyup.enter)="enterPmid(searchBox.value)" onsubmit="test()" id="text-line" placeholder="enter PMID example: 25684017" />
 
   <button (click)= "enterPmid(searchBox.value)" id="search" class="button-small-black">search</button>
 
-  <button (click)= "exampleInput()" id="example">search by example: 21494637</button>
+  <button mat-button [matMenuTriggerFor]="menu" id="exampleButton">examples</button>
+  <mat-menu #menu="matMenu" class="examplesMenu">
+
+    <div id="item1" class ="menuItems" (click)="exampleInput('21494637')">
+      <p class="exampleText">PMID: 21494637<br>
+        Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.
+      </p>
+    </div>
+
+    <div id="item2" class ="menuItems" (click)="exampleInput('11467812')">
+      <p class="exampleText">PMID: 11467812<br>
+        Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.
+      </p>
+    </div>
+
+    <div id="item3" class ="menuItems" (click)="exampleInput('55734213')">
+      <p class="exampleText">PMID: 55734213<br>
+        Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.
+      </p>
+    </div>
+
+  </mat-menu>
 
   <div id="errorMessage">given pubMed ID does not exist</div>
 

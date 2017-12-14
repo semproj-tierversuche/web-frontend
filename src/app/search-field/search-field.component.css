@@ -47,10 +47,25 @@
   top: -25px;
 }
 
-#example {
-  font: 9px "Heiti SC";
+#exampleButton {
+  font: 10px "Heiti SC";
   position: relative;
+  background-color: #bcbcbc;
+  padding: 3px;
   top: 5px;
+}
+
+.menuItems {
+  height: 80px;
+  width: 240px;
+  font-size: 10px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.menuItems:hover {
+  background-color: #9ad3de;
 }
 
 #searchFieldWrapper {

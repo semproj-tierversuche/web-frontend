@@ -1,4 +1,5 @@
 import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { MatMenu } from '@angular/material';
 
 @Component({
   selector: 'app-search-field',
@@ -48,15 +49,15 @@ export class SearchFieldComponent implements OnInit {
 
   // checks if pmid is a 8 digit number
   isInputValid(input): boolean {
-    if (Number.isInteger(Number(input)) &&
-      input.length <= 8) {
+    if (
+      Number.isInteger(Number(input)) &&
+      input.length > 0 && input.length <= 8) {
       return true;
     }
     return false;
   }
 
-  exampleInput() {
-    (<HTMLInputElement>document.getElementById('text-line')).value = '21494637';
-    this.enterPmid('21494637');
+  exampleInput(exampleId) {
+    (<HTMLInputElement>document.getElementById('text-line')).value = exampleId;
   }
 }

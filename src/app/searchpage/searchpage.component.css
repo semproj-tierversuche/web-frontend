@@ -5,6 +5,7 @@
   height: 75%;
   width: 86%;
   z-index: -1;
+  border-radius: 5px;
 }
 
 #container {
@@ -20,7 +21,7 @@
 
 #confirmBox {
   position: relative;
-  top: 80px;
+  top: 65px;
 }
 
 .middle {

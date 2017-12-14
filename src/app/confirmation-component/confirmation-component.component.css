@@ -1,10 +1,11 @@
 #confirmBox {
   font-family: "Heiti SC";
+  background-color: white;
   width: 400px;
   height: 210px;
-  border: solid rgba(4, 4, 4, 0.67);
+
   border-width: 1px;
-  border-radius: 3px;
+  border-radius: 7px;
 }
 
 #closeButton {

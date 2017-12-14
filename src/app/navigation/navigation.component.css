@@ -35,7 +35,7 @@
 }
 
 a {
-  font: 13px "Heiti SC";
+  font: 15px "Heiti SC";
   text-decoration: none;
   color: black;
   display: block;
@@ -68,8 +68,8 @@ ul:after {
 
 nav {
   position: relative;
-  width: 86%;
-  top: 30px;
+  width: 85%;
+  top: 50px;
   text-align: center;
 }
 
@@ -183,7 +183,7 @@ ul.primary li:hover > a{
   user-select: none;
   width: 62px;
   height: 62px;
-
+  top: -20px;
 }
 
 .middle {
