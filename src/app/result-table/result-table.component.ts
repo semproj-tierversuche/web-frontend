@@ -10,6 +10,7 @@ import { MiddlewareService} from '../services/middleware.service';
 export class ResultTableComponent implements OnInit {
 
   middlewareData: MiddlewareData;
+  width: any;
 
   constructor(private middlewareService: MiddlewareService) {
   }
@@ -28,4 +29,8 @@ export class ResultTableComponent implements OnInit {
 
   compareClick(data: Result) {                // hier kommt man durch das Klicken auf die Lupe hin
   }
+  ChangePercetageBarWidth(Percentage: number) {
+     return Percentage * 100;
+  }
+
 }

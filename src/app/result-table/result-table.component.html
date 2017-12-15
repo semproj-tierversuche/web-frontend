@@ -10,7 +10,7 @@
 
       <td>
         <div class="w3-light-grey">
-          <div id = "test" class="w3-container w3-green w3-center" style="width: 50%">   <!--hier dynamische prozentwerte eingeben-->
+          <div id = "test" class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
             {{data.Matching.Relevance * 100}}%
           </div>
         </div>
