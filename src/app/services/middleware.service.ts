@@ -7,7 +7,7 @@ import {Subject} from 'rxjs/Subject';
 @Injectable()
 export class MiddlewareService {
 
-  private static middlewareUrl = 'http://localhost:5000/';
+  private static middlewareUrl = 'http://141.20.31.92/frontend-api/';
   private static documentAPI = 'document/';
   private static resultAPI = 'results/';
 
