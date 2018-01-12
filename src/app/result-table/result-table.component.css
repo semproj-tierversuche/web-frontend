@@ -31,3 +31,7 @@ td {
   margin: 0px auto;
   cursor: pointer;
 }
+
+#percentage-bar {
+  border: 10px;
+}
