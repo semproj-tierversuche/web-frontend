@@ -1,27 +1,27 @@
 <head>
   <meta name="viewport" content="width=device-width">
 </head>
-<div id="wrap">
-  <nav id="navigation" class="middle">
-    <ul class="primary">
-      <li id="search">
-        <a routerLink="/search" routerLinkActive="active">SEARCH</a>
-      </li>
-      <li id ="results">
-        <a [routerLink]="['/result', '']" routerLinkActive="active">RESULT</a>
-      </li>
-      <li>
-        <img id="logo" class="middle" src="assets/images/logo1.png">
-      </li>
 
-      <li class="right">
-        <a id = "info" routerLink="/info" routerLinkActive="active">INFO</a>
-      </li>
-      <li class="right">
-        <a id = "about" routerLink="/about" routerLinkActive="active">ABOUT</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+<nav id="navigation" class="middle">
+  <ul class="primary">
+    <!--<div id="logoText">semantic search for alternatives to animal testing</div>-->
+    <li style="float:left">
+      <div id="navigation-text">semantic search for alternative methods to animal testing</div>
+    </li>
+
+    <li >
+      <a routerLink="/about" routerLinkActive="active">ABOUT</a>
+    </li>
+    <li >
+      <a routerLink="/info" routerLinkActive="active">INFO</a>
+    </li>
+    <li >
+      <a [routerLink]="['/result', '']" routerLinkActive="active">RESULT</a>
+    </li>
+    <li >
+      <a routerLink="/search" routerLinkActive="active">SEARCH</a>
+    </li>
+</ul>
+</nav>
 
 <router-outlet class="router-outlet"></router-outlet>

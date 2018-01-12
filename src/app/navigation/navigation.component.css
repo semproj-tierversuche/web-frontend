@@ -1,208 +1,52 @@
-/* A simple, css only, (some-what) responsive menu */
-/* Source: https://codepen.io/jurbank/pen/veGnb */
-.wrap {
-  display: inline-block;
-  height: 100px;
-  width: 900px;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
+#navigation {
+  width: 86%;
+  top: 25px;
+  min-width: 550px;
 }
 
-#search {
-  position: absolute;
-  left: -30px;
-  top: -20px;
-}
-
-#results {
-  position: absolute;
-  left: 70px;
-  top: -20px;
-}
-
-#about {
-  position: absolute;
-  top: -20px;
-  right: 70px;
-}
-
-#info {
-  position: absolute;
-  top: -20px;
-  right: -30px;
-}
-
-a {
-  font: 15px "Heiti SC";
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-a:hover {
-  text-decoration: underline;
+#navigation-text {
+  position: relative;
+  width: 170px;
+  font: 17px "Heiti SC", sans-serif;
+  font-weight: lighter;
+  line-height: 24px;
+  cursor: default;
+  user-select: none;
 }
 
 ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 li {
-  float: left;
+  float: right;
 }
 
-/* clear'n floats */
-ul:after {
-  clear: both;
-}
-
-ul:before,
-ul:after {
-  content: "";
+li a{
+  font: 15px "Heiti SC", sans-serif;
+  font-weight: bold;
   display: block;
-}
-
-nav {
-  position: relative;
-  width: 85%;
-  top: 50px;
+  color: black;
   text-align: center;
-}
-
-/* prime */
-ul.primary li a {
-  display: block;
-  padding: 20px 30px;
-}
-
-ul.primary li:last-child a {
-  border-right: none;
-}
-
-ul.primary li a:hover {
-
-}
-
-/* subs */
-ul.sub {
-  position: absolute;
-  z-index: 200;
-  box-shadow: 2px 2px 0 #BEBEBE;
-  width: 35%;
-  display:none;
-}
-
-ul.sub li {
-  float: none;
-  margin: 0;
-}
-
-ul.sub li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  color: #000;
-  padding: 15px 30px;
-}
-
-ul.sub li:last-child a {
-  border-bottom: none;
-}
-
-ul.sub li a:hover {
-  color: #000;
-  background: #eeeeee;
-}
-
-/* sub display*/
-ul.primary li:hover ul {
-  display: block;
-  background: #fff;
-}
-
-/* keeps the tab background white */
-ul.primary li:hover a {
-  background: #fff;
-  color: #666;
-  text-shadow: none;
-}
-
-ul.primary li:hover > a{
-  color: #000;
-}
-
-@media only screen and (max-width: 600px) {
-  .decor {
-    padding: 3px;
-  }
-
-  .wrap {
-    width: 100%;
-    margin-top: 0px;
-  }
-
-  li {
-    float: none;
-  }
-
-  ul.primary li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
-
-  ul.primary li:hover ul {
-    display: block;
-    background: #272727;
-    color: #fff;
-  }
-
-  ul.sub {
-    display: block;
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-
-  ul.sub li a {
-    background: #272727;
-    border: none;
-    color: #8B8B8B;
-  }
-
-  ul.sub li a:hover {
-    color: #ccc;
-    background: none;
-  }
-}
-
-#logo {
+  padding: 5px 0px;
+  text-decoration: none;
+  margin-left: 30px;
+  margin-right: 3px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-top: solid transparent 2px;
   user-select: none;
-  width: 62px;
-  height: 62px;
-  top: -20px;
+}
+
+li a:hover {
+  border-top: solid black 2px;
 }
 
 .middle {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-}
-.centered {
-  position: relative;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.right {
-  float: right;
-}
-
-.router-outlet {
-  position: inherit;
-  float: inherit;
 }

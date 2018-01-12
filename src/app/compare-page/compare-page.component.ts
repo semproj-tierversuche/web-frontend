@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { Result } from '../common/middleware.data';
+import { Origin, Result } from '../common/middleware.data';
 
 @Component({
   selector: 'app-compare-page',
@@ -10,13 +10,15 @@ import { Result } from '../common/middleware.data';
 })
 export class ComparePageComponent implements OnInit {
 
-  inputArticle: Result;
+  inputArticle: Origin;
   matchedArticle: Result;
+  score: number;
 
   constructor(public thisDialogRef: MatDialogRef<ComparePageComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: {input: Result, matched: Result}) {
+              @Inject(MAT_DIALOG_DATA) public data: {input: Origin, matched: Result}) {
     this.inputArticle = data.input;
     this.matchedArticle = data.matched;
+    this.score = data.matched.Matching.Relevance*100;
   }
 
   ngOnInit() {
@@ -24,6 +26,11 @@ export class ComparePageComponent implements OnInit {
 
   close() {
     this.thisDialogRef.close('close');
+  }
+
+  showFeedback() {
+    document.getElementById('container').scrollTo(0, 640);
+    document.getElementById('container').style.overflowY = 'scroll';
   }
 
 }

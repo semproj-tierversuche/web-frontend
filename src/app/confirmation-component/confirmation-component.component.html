@@ -1,18 +1,21 @@
 
-<div *ngIf = 'metaData' id="confirmBox">
-  <button id="closeButton" (click) = close() >x</button>
+  <div id="content-wrapper">
+    <div id="article-information">
 
-  <div id="articleInformation">
+      <p class="header">Title:</p>
+      <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{metaData.PMID}}">{{metaData.Title}}</a>
 
-    <p class="thinSpacer"><b>This article has a title:</b></p>
-    <p class="doubleSpacer">  {{metaData.Title}}</p>
+      <p class="header">Authors:</p>
+      <p style="text-align: center">{{metaData.Authors}}</p>
 
-    <p class = "thinSpacer"><b>ID: </b>{{metaData.PMID}}</p>
+      <p class = "header">ID: </p>
+      <p style="text-align: center">{{metaData.PMID}}</p>
 
-    <p class = "thinSpacer"><b>Authors: </b>{{metaData.Authors}}</p>
+    </div>
+
+    <div id="button-wrapper">
+      <button mat-button (click)="goBack()">Go Back</button>
+      <button mat-button [mat-dialog-close] = true cdkFocusInitial style="float:right" >Confirm</button>
+    </div>
 
   </div>
-
-  <button (click)= 'confirm()' id="confirmButton" class="button-small-black middle">continue</button>
-</div>
-

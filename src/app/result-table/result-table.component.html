@@ -2,41 +2,37 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
-  <tbody *ngIf="middlewareData != null">
-    <!-- Hier ngFor schleife einfügen und middlewaredate durchiterieren! -->
-      <tr  *ngFor="let data of middlewareData.Results">
-        <td> {{data.Matching.Relevance}}</td>
-        <td> {{data.Matching.AnimalTest}}</td>
-        <td>{{data.Record.Title}}</td>
-        <td>{{data.Record.Date}}</td>
-        <td>{{data.Record.Authors}}</td>
-      </tr>
 
-    <td>
-      <div class="w3-light-grey">
-        <div id = "test" class="w3-container w3-green w3-center" style="width: 50%">  <!--hier dynamische prozentwerte eingeben-->
+<table class="table table-hover">
+  <tbody>
+  <tr *ngFor="let data of middlewareData.Results">
+
+    <td id="article-score">
+      <div class="w3-light-grey" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+        <div class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
           {{data.Matching.Relevance * 100}}%
         </div>
       </div>
     </td>
 
-    <td>
+    <td id="article-use">
       <p>{{OutputTypeOfTest(data.Matching.AnimalTest)}}</p>
     </td>
 
-    <td>
+    <td id="article-information">
       <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
-        {{data.Record.Title}} </a></p>
-      <p>{{data.Record.Date}}</p>
-      <p id="authors">{{data.Record.Authors}}</p>
-    </td>
+    {{data.Record.Title}} </a></p>
+  <p>{{data.Record.Date}}</p>
+  <p id="authors">{{data.Record.Authors}}</p>
+</td>
 
-    <td><img id="logo" (click)="compareClick(data)" src="../../assets/ICONS/SearchIcon.ico"/>
-    </td>
+<td id="search-details"><img (click)="compareClicked(data)" src="../../assets/ICONS/SearchIcon.ico"/>
+</td>
+</tr>
 
-  </tbody>
+</tbody>
 
-
+</table>
 
 
 

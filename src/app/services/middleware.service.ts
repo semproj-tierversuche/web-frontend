@@ -16,11 +16,14 @@ export class MiddlewareService {
   constructor(private http: HttpClient) {
   }
 
-  getExampleResults(): MiddlewareData {
-    return this.exampleResponse();
+  getExampleResults(pmid: number): Observable<MiddlewareData> {
+    return Observable.create(observer => {
+      observer.next(this.exampleResponse());
+      observer.complete();
+    });
   }
 
-  getExampleInputMetaData(pmid: number): Observable<Origin> {
+    getExampleInputMetaData(pmid: number): Observable<Origin> {
     return Observable.create(observer => {
       observer.next(this.exampleOriginData());
       observer.complete();
@@ -711,7 +714,7 @@ export class MiddlewareService {
             'Journal': [
               'The Journal of pharmacology and experimental therapeutics'
             ],
-            'Keywords': [],
+            'Keywords': ['two'],
             'Link': 'https://www.ncbi.nlm.nih.gov/pubmed/19644042',
             'MeshHeadings': [
               'Animals',
@@ -774,7 +777,7 @@ export class MiddlewareService {
       'Journal': [
         'Brain research'
       ],
-      'Keywords': [],
+      'Keywords': ['one'],
       'Link': 'https://www.ncbi.nlm.nih.gov/pubmed/11489449',
       'MeshHeadings': [
         'Animals',

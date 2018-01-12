@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Inject, Input, Output, EventEmitter} from '@angular/core';
 import { Origin } from '../common/middleware.data';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-confirmation-component',
@@ -8,21 +9,25 @@ import { Origin } from '../common/middleware.data';
 })
 export class ConfirmationComponentComponent implements OnInit {
 
+  metaData: Origin;
   // gets metaData from searchpage component
-  @Input() metaData: Origin;
+  //@Input() metaData: Origin;
   // emmits to searchpage component when user confirms
-  @Output() userConfirmed = new EventEmitter();
+  userFonfirmed = false;
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<ConfirmationComponentComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: {metaData: Origin}) {
+    this.metaData = data.metaData;
+  }
 
   ngOnInit() { }
 
-  close() {
+  /*close() {
     this.metaData = undefined;
-  }
+  }*/
 
-  confirm() {
-    this.userConfirmed.emit();
+  goBack() {
+    this.dialogRef.close();
   }
 
 

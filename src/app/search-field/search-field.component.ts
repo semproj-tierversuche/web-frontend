@@ -1,10 +1,10 @@
-import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { MatMenu } from '@angular/material';
 
 @Component({
   selector: 'app-search-field',
   templateUrl: './search-field.component.html',
-  styleUrls: ['./search-field.component.css']
+  styleUrls: ['./search-field.component.css'],
 })
 export class SearchFieldComponent implements OnInit {
 
@@ -31,7 +31,7 @@ export class SearchFieldComponent implements OnInit {
   enterPmid(input): void {
     if (this.isInputValid(input)) {
       this.pmid = input;
-      document.getElementById('errorMessage').style.opacity = '0';
+      document.getElementById('error-message').style.opacity = '0';
     } else {
       this.pmid = null;
       this.showErrorMessage();
@@ -39,24 +39,28 @@ export class SearchFieldComponent implements OnInit {
     this.sendPmid();
   }
 
-  // show error message for 4 seconds with fadein/fadeout transition
+  // show error message for 2,5 seconds with fadein/fadeout transition
   showErrorMessage() {
-    document.getElementById('errorMessage').style.opacity = '1';
+    document.getElementById('error-message').style.opacity = '1';
+    document.getElementById('text-line').style.borderColor = 'rgba(255, 9, 12, 0.8)';
+    (<HTMLImageElement>document.getElementById('search-icon')).src = '../../assets/ICONS/searchIconRed.png';
+
     setTimeout(function () {
-      document.getElementById('errorMessage').style.opacity = '0';
-      }, 3000);
+      document.getElementById('error-message').style.opacity = '0';
+      document.getElementById('text-line').style.borderColor = '#000000';
+      (<HTMLImageElement>document.getElementById('search-icon')).src = '../../assets/ICONS/searchIcon.png';
+      }, 2500);
   }
 
-  // checks if pmid is a 8 digit number
   isInputValid(input): boolean {
-    if (
-      Number.isInteger(Number(input)) &&
+    if (Number.isInteger(Number(input)) &&
       input.length > 0 && input.length <= 8) {
       return true;
     }
     return false;
   }
 
+  // Shows example pmid in input field after choosing it from examples menu
   exampleInput(exampleId) {
     (<HTMLInputElement>document.getElementById('text-line')).value = exampleId;
   }

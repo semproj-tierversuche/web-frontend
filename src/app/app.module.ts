@@ -20,11 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 const appRoutes: Routes = [
   { path: 'results', component: ResultPageComponent },
-  { path: 'search',      component: SearchpageComponent },
+  { path: 'search', component: SearchpageComponent },
   {path: 'about', component: AboutPageComponent},
   {path: 'info', component: InfoPageComponent}
 ];
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     NavigationComponent,
     AboutPageComponent,
     InfoPageComponent,
-    ConfirmationComponentComponent
+    ConfirmationComponentComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ const appRoutes: Routes = [
   ],
 
   entryComponents: [
-    ComparePageComponent
+    ComparePageComponent,
+    ConfirmationComponentComponent
   ],
 
   providers: [MiddlewareService],

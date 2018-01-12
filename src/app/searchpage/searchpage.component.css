@@ -12,16 +12,11 @@
   background-color: white;
 }
 
-#searchWrapper {
-  height: 290px;
-  width: 400px;
+#search-wrapper {
+  width: 350px;
+  height: 100px;
   position: relative;
-  top: 30%
-}
-
-#confirmBox {
-  position: relative;
-  top: 65px;
+  top: 37%;
 }
 
 .middle {
