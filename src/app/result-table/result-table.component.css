@@ -33,5 +33,6 @@ td {
 }
 
 #percentage-bar {
-  border: 10px;
+  border-width: 10px;
+  color: #4CAF50;
 }
