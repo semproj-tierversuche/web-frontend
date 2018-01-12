@@ -11,7 +11,8 @@ const appRoutes: Routes = [
   { path: 'result/:id', component: ResultPageComponent },
   { path: 'search', component: SearchpageComponent },
   {path: 'about', component: AboutPageComponent},
-  {path: 'info', component: InfoPageComponent}
+  {path: 'info', component: InfoPageComponent},
+  {path: '**', redirectTo: 'search' }
 ];
 
 @NgModule({

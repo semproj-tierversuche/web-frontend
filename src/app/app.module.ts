@@ -22,14 +22,6 @@ import { MatDialogModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
 import { FeedbackComponent } from './feedback/feedback.component';
 
-
-const appRoutes: Routes = [
-  { path: 'results', component: ResultPageComponent },
-  { path: 'search', component: SearchpageComponent },
-  {path: 'about', component: AboutPageComponent},
-  {path: 'info', component: InfoPageComponent}
-];
-
 @NgModule({
   declarations: [
     AppComponent,
