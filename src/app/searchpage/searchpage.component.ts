@@ -36,12 +36,11 @@ export class SearchpageComponent implements OnInit {
   // call method from middleWareService for metadata and save it to this.metaData
   getResponse(pmid: number) {
     this.middlewareService.getInputMetaData(pmid).subscribe(
-      res => this.metaData = res,
+      res => {
+        this.metaData = res;
+        this.openConfirmationDialog();
+      },
       error => this.searchField.showErrorMessage());
-
-    if (this.metaData !== undefined) {
-      this.openConfirmationDialog();
-    }
   }
 
   userConfirmed() {
