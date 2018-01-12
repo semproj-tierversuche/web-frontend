@@ -10,7 +10,6 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./result-table.component.css']
 })
 export class ResultTableComponent implements OnInit {
-
   middlewareData: MiddlewareData;
   width: any;
 
@@ -24,8 +23,12 @@ export class ResultTableComponent implements OnInit {
   OutputTypeOfTest (animalTest: string) {     // umwandeln des Begriffs 'both' in 'Animal and Alternative Test'
     if (animalTest === 'both') {
       return 'Animal and Alternative Test';
-    } else {
-      return animalTest;
+    }
+    if (animalTest === 'yes') {
+      return 'Animal Test';
+    }
+    if (animalTest === 'no') {
+      return 'Alternative Test';
     }
   }
 

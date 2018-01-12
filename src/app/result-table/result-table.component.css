@@ -32,7 +32,38 @@ td {
   cursor: pointer;
 }
 
-#percentage-bar {
-  border-width: 10px;
-  color: #4CAF50;
+
+
+.PercentageBarBackgroundGreen{
+  background-color: #ffffff;
+  border-color: #4CAF50;
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+.PercentageBarBackgroundYellow{
+  background-color: #ffffff;
+  border-color: #e2dd5d;
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+.PercentageBarBackgroundRed{
+  background-color: #e2dd5d;
+  border-color: #4CAF50;
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+.highPercentage {
+    color:#fff;
+    background-color:#4CAF50
+}
+
+.middlePercentage {
+    background-color: #e2dd5d;
+}
+
+.lowPercentage {
+    background-color: #ff4819;
 }
