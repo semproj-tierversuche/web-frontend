@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.compare-page-dialog .mat-dialog-container {
+  width: 750px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.confirmation-dialog .mat-dialog-container {
+  height: 300px;
+  width: 600px;
+}

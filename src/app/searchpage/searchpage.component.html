@@ -1,0 +1,16 @@
+<div id="container">
+
+  <!-- Content - grey box. Inside it:
+  1.Search field as single component
+  2.Confirmation box. Appears as a Dialog window when search is clicked and PMID validated
+  -->
+  <div id="content" class="middle">
+
+    <div id="search-wrapper" class="middle">
+      <app-search-field id="search-field" class="middle" (pmidEvent)="recievePmid($event)"></app-search-field>
+    </div>
+
+  </div>
+
+</div>
+

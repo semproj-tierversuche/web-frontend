@@ -1,0 +1,108 @@
+#search-button {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  float: right;
+  top: -35px;
+  left: -15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+#search-icon {
+   position: relative;
+   left: 5px;
+   top: -3px;
+ }
+
+#search-button:hover > #search-icon {
+  left: 0px;
+}
+
+>>> .example-menu .mat-menu-content {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+>>> .example-menu .mat-menu-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.button-small-black {
+  font: 10px Heiti SC;
+  font-weight: lighter;
+  padding: 6px 9px;
+  display:inline-block;
+  text-decoration: none;
+  border-radius: 3px;
+  background-color: #1e1e1e;
+  color: white;
+  border: 0;
+}
+
+button {
+  outline: none;
+}
+
+.button-small-black:hover {
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+}
+
+#text-line {
+  background-color: transparent;
+  font: 16px "Heiti SC";
+  font-weight: lighter;
+  text-align: center;
+  color: #000000;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid rgba(4, 4, 4, 0.6) 2px;
+  padding: 10px 10px;
+  width: 265px;
+  height: 32px;
+}
+
+#error-message {
+  opacity: 0;
+  font-size: 10px;
+  color: rgba(255, 9, 12, 0.8);
+  transition: opacity 0.5s ease-out;
+  position: relative;
+  top: 20px;
+  left: 60px;
+}
+
+#example-button {
+  font: 13px "Heiti SC";
+  position: relative;
+  background-color: #bcbcbc;
+  padding: 5px;
+  top: 5px;
+}
+
+.menu-items {
+  height: 80px;
+  width: 280px;
+  font-size: 10px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.menu-items:hover {
+  background-color: #9ad3de;
+}
+
+#search-field-wrapper {
+  width: 300px;
+  height: 60px;
+}
+

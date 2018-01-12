@@ -1,0 +1,54 @@
+
+#content-wrapper {
+  margin: 0 auto;
+}
+
+.header {
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 7px;
+}
+
+#article-information {
+  font: 15px "Heiti SC", sans-serif;
+  font-weight: lighter;
+  height: 200px;
+  overflow-y: auto;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: -10px;
+}
+
+#article-information a {
+  display: block;
+  text-align: center;
+  color: black;
+  padding-bottom: 7px;
+}
+
+#article-information a:hover {
+  text-decoration: none;
+  color: #686868;
+}
+
+
+#button-wrapper {
+  height: 40px;
+  width: 300px;
+  margin: auto;
+}
+
+button {
+  background-color: #bcbcbc;
+  outline: none;
+  height: 40px;
+  width: 50px;
+}
+
+button:hover {
+  background-color: #787878;
+}
+

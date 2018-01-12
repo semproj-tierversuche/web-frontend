@@ -1,0 +1,33 @@
+td {
+  font-size: 12px;
+}
+
+#article-score {
+  width: 15%;
+}
+
+#article-use {
+  width: 15%;
+}
+
+#article-information {
+  width: 50%;
+}
+
+#search-details {
+  width: 15%;
+}
+
+#authors {
+  font-size: 9px;
+}
+
+#search-details img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 30px;
+  display: block;
+  margin: 0px auto;
+  cursor: pointer;
+}
