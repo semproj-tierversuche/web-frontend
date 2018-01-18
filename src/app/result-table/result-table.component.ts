@@ -10,7 +10,6 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./result-table.component.css']
 })
 export class ResultTableComponent implements OnInit {
-
   middlewareData: MiddlewareData;
   width: any;
 
