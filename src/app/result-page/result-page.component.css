@@ -1,6 +1,6 @@
 #content {
   top: 110px;
-  height: 75%;
+  height: 80%;
   width: 86%;
   min-width: 550px;
 }
@@ -58,4 +58,24 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+}
+
+.centered {
+  position: relative;
+  top: 40%;
+  margin: auto auto;
+}
+
+#spinner {
+  border: 16px solid #ffffff; /* Light grey */
+  border-top: 16px solid #6f6f6f; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -7,8 +7,10 @@
   <div id="content" class="middle">
 
     <div id="search-wrapper" class="middle">
-      <app-search-field id="search-field" class="middle" (pmidEvent)="recievePmid($event)"></app-search-field>
+      <app-search-field id="search-field" (pmidEvent)="recievePmid($event)"></app-search-field>
     </div>
+
+    <div id="spinner" *ngIf="showLoadingAnimation"></div>
 
   </div>
 

@@ -1,15 +1,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-
-
 <table class="table table-hover">
   <tbody>
   <tr *ngFor="let data of middlewareData.Results">
 
+    <!-- add green percentage bar-->
     <td id="article-score">
-      <div class="w3-light-grey" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+      <div *ngIf="data.Matching.Relevance>=0.7" class="w3-light-grey PercentageBarBackgroundGreen" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
         <div class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
+          {{data.Matching.Relevance * 100}}%
+        </div>
+      </div>
+
+      <!-- add yellow percentage bar-->
+      <div *ngIf="data.Matching.Relevance<0.7 && data.Matching.Relevance>0.3" class="w3-light-grey PercentageBarBackgroundYellow" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+        <div class="w3-container middlePercentage w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
+          {{data.Matching.Relevance * 100}}%
+        </div>
+      </div>
+
+      <!-- add red percentage bar-->
+      <div *ngIf="data.Matching.Relevance<0.3" class="w3-light-grey PercentageBarBackgroundRed" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+        <div class="w3-container lowPercentage w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
           {{data.Matching.Relevance * 100}}%
         </div>
       </div>
@@ -21,19 +34,15 @@
 
     <td id="article-information">
       <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
-    {{data.Record.Title}} </a></p>
-  <p>{{data.Record.Date}}</p>
-  <p id="authors">{{data.Record.Authors}}</p>
-</td>
+        {{data.Record.Title}} </a></p>
+      <p>{{data.Record.Date}}</p>
+      <p id="authors">{{data.Record.Authors}}</p>
+    </td>
 
-<td id="search-details"><img (click)="compareClicked(data)" src="../../assets/ICONS/SearchIcon.ico"/>
-</td>
-</tr>
+    <td id="search-details"><img (click)="compareClicked(data)" src="../../assets/ICONS/SearchIcon.ico"/>
+    </td>
+  </tr>
 
-</tbody>
+  </tbody>
 
 </table>
-
-
-
-

@@ -2,48 +2,51 @@
 <div id="container">
 
   <!-- Compare page-->
- <button id = "close-button" (click)="close()">X</button>
+  <div id="compare-page">
+    <button id = "close-button" (click)="close()">X</button>
 
-  <p id="search-details">Search Details</p>
+    <p id="search-details">Search Details</p>
 
-  <div id="content" class="middle">
-    <div id="abstract-text-wrapper" class="middle">
-      <p id="given-article-header" class="header-text">Given Article</p>
-      <p id="matched-article-header" class="header-text">Matched Article</p>
+    <div id="content" class="middle">
+      <div id="abstract-text-wrapper" class="middle">
+        <p id="given-article-header" class="header-text">Given Article</p>
+        <p id="matched-article-header" class="header-text">Matched Article</p>
 
-      <div id="input-article" class="text-field">
-        {{inputArticle.Abstract}}
+        <div id="input-article" class="text-field">
+          {{inputArticle.Abstract}}
+        </div>
+
+        <div id="matched-article" class="text-field">
+          {{matchedArticle.Record.Abstract}}
+        </div>
+
+        <p id="keywords1" class="header-text">KEYWORDS</p>
+        <p id="keywords2" class="header-text">KEYWORDS</p>
+
+        <div id="input-article-keywords" class="text-field">
+          {{inputArticle.Keywords}}
+        </div>
+
+        <div id ="matched-article-keywords" class="text-field">
+          {{matchedArticle.Record.Keywords}}
+        </div>
       </div>
 
-      <div id="matched-article" class="text-field">
-        {{matchedArticle.Record.Abstract}}
-      </div>
-
-      <p id="keywords1" class="header-text">KEYWORDS</p>
-      <p id="keywords2" class="header-text">KEYWORDS</p>
-
-      <div id="input-article-keywords" class="text-field">
-        {{inputArticle.Keywords}}
-      </div>
-
-      <div id ="matched-article-keywords" class="text-field">
-        {{matchedArticle.Record.Keywords}}
+      <p id="matching-score" class="middle">Matching Score: {{score}}%</p>
+      <div id="matching-bar" class="middle">
+        <div id="green-bar" [style.width.%] = "score"></div>
       </div>
     </div>
 
-    <p id="matching-score" class="middle">Matching Score: {{score}}%</p>
-    <div id="matching-bar" class="middle">
-      <div id="green-bar" [style.width.%] = "score"></div>
-    </div>
-  </div>
-
-  <button id="feedback-button" (click)="showFeedback()" ng-mouseover="hoverFeedback()">
-    <p id="feedback-text">Feedback</p>
+    <button id="feedback-button" (click)="showFeedback()" ng-mouseover="hoverFeedback()">
+      <p id="feedback-text">Feedback</p>
 
       <img id="feedback-arrow" height="10px;" src="../../assets/ICONS/feedbackArrow.png"/>
-  </button>
+    </button>
+
+  </div>
 
   <!-- Feedback page -->
-  <app-feedback></app-feedback>
+  <app-feedback id="feedback-page"></app-feedback>
 
 </div>

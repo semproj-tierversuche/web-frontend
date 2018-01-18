@@ -1,10 +1,10 @@
 import { Component, Output, OnInit, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { MatMenu } from '@angular/material';
 
 @Component({
   selector: 'app-search-field',
   templateUrl: './search-field.component.html',
   styleUrls: ['./search-field.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SearchFieldComponent implements OnInit {
 

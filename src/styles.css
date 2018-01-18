@@ -6,6 +6,7 @@
   height: 600px;
   overflow-x: hidden;
   overflow-y: hidden;
+  padding: 0px;
 }
 
 .confirmation-dialog .mat-dialog-container {

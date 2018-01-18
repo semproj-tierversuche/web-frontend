@@ -2,24 +2,24 @@
 <div id="content" class="middle">
 
   <!-- Menu line -->
-  <div id="menu">
-    <div style="width: 15%">Score</div>
-    <div style="width: 15%">Use</div>
-    <div style="width: 50%">Article information</div>
-    <div style="width: 15%; text-align: right">Search details</div>
-  </div>
+    <div id="menu">
+      <div style="width: 15%">Relevance</div>
+      <div style="width: 15%">Type Of Publication</div>
+      <div style="width: 50%">Article information</div>
+      <div style="width: 15%; text-align: right">Search details</div>
+    </div>
 
   <!-- Result/Output List Table -->
   <div id="result-table">
-    <mat-spinner class="spinner" *ngIf="showLoadingAnimation"></mat-spinner>
+    <div id="spinner" class="centered" *ngIf="showLoadingAnimation"></div>
     <app-result-table *ngIf="!showLoadingAnimation"></app-result-table>
   </div>
 
   <!-- Button for PDF export -->
   <div id ="pdf-export-wrapper">
-   <button mat-button id="pdf-export-button" (click) = "exportPdf()" style="float:right;">
+    <button mat-button id="pdf-export-button" (click) = "exportPdf()" style="float:right;">
       <img src="../../assets/ICONS/pdfIcon.png" style="padding-right: 5px; position: relative; top:-2px;" width="20px"/>
-     PDF
+      PDF
     </button>
   </div>
 

@@ -16,8 +16,9 @@
   font-weight: lighter;
   height: 200px;
   overflow-y: auto;
-  width: 80%;
+  width: 90%;
   margin: auto;
+  padding: 0px 30px;
   position: relative;
   top: -10px;
 }
