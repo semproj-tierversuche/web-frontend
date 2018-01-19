@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { Origin, Result } from '../common/middleware.data';
+import { Origin, Result } from '../../../../common/middleware.data';
 
 @Component({
   selector: 'app-compare-page',

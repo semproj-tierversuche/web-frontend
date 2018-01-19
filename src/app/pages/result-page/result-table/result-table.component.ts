@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MiddlewareData, Result} from '../common/middleware.data';
-import { MiddlewareService} from '../services/middleware.service';
-import {ComparePageComponent} from '../compare-page/compare-page.component';
+import {MiddlewareData, Result} from '../../../common/middleware.data';
+import { MiddlewareService} from '../../../services/middleware.service';
+import {ComparePageComponent} from './compare-page/compare-page.component';
 import { MatDialog } from '@angular/material';
 
 @Component({

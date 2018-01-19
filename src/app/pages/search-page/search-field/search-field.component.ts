@@ -17,7 +17,7 @@ export class SearchFieldComponent implements OnInit {
   ngOnInit() {
   }
 
-  // pass pmid to searchpage component via EventEmitter
+  // pass pmid to search-page component via EventEmitter
   sendPmid() {
     this.pmidEvent.emit(this.pmid);
   }
@@ -26,7 +26,7 @@ export class SearchFieldComponent implements OnInit {
   (1)validate the input
   (2)input is valid - save pmid (and hide error message)
   (2.1)input is invalid - give error message and pmid = null
-  (3)send pmid to searchpage component
+  (3)send pmid to search-page component
   */
   enterPmid(input): void {
     if (this.isInputValid(input)) {

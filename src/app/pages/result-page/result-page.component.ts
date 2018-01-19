@@ -1,9 +1,7 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {MiddlewareData} from '../common/middleware.data';
-import {MiddlewareService} from '../services/middleware.service';
-import {delay} from 'rxjs/operators';
-import {ResultTableComponent} from '../result-table/result-table.component';
+import {MiddlewareData} from '../../common/middleware.data';
+import {MiddlewareService} from '../../services/middleware.service';
 
 @Component({
   selector: 'app-result-page',
