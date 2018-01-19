@@ -11,7 +11,7 @@ export class ConfirmationComponentComponent implements OnInit {
 
   metaData: Origin;
   // gets metaData from searchpage component
-  //@Input() metaData: Origin;
+  // @Input() metaData: Origin;
   // emmits to searchpage component when user confirms
   userFonfirmed = false;
 

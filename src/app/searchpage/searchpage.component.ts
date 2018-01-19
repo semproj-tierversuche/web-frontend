@@ -17,6 +17,7 @@ export class SearchpageComponent implements OnInit {
   pmid: number;
   metaData: Origin;
   @ViewChild(SearchFieldComponent) searchField: SearchFieldComponent;
+  showLoadingAnimation = false;
 
   constructor(public router: Router, public middlewareService: MiddlewareService,
   public dialog: MatDialog) { }
@@ -35,13 +36,15 @@ export class SearchpageComponent implements OnInit {
 
   // call method from middleWareService for metadata and save it to this.metaData
   getResponse(pmid: number) {
+    this.showLoadingAnimation = true;
     this.middlewareService.getInputMetaData(pmid).subscribe(
-      res => {
-        this.metaData = res;
-        this.openConfirmationDialog();
-      },
-      error => this.searchField.showErrorMessage());
+      res => { this.metaData = res,
+        this.openConfirmationDialog(),
+        this.showLoadingAnimation = false; },
+      error => { this.searchField.showErrorMessage(),
+        this.showLoadingAnimation = false; });
   }
+
 
   userConfirmed() {
     this.router.navigate(['/result', this.pmid]);

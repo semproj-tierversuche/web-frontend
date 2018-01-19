@@ -29,7 +29,7 @@ export class ComparePageComponent implements OnInit {
   }
 
   showFeedback() {
-    document.getElementById('container').scrollTo(0, 640);
+    document.getElementById('container').scrollTo({ left: 0, top: 648, behavior: 'smooth' });
     document.getElementById('container').style.overflowY = 'scroll';
   }
 

@@ -1,11 +1,12 @@
 #container {
-  position: relative;
-  left: -24px;
-  top: -24px;
   width: 750px;
   height: 600px;
   overflow-y: hidden;
   overflow-x: hidden;
+}
+
+#compare-page {
+  height: 600px;
 }
 
 #search-details {
@@ -122,7 +123,7 @@
 }
 
 #green-bar {
-  background-color:#4CAF50;
+  background-color: #4CAF50;
   height: 100%;
 }
 
