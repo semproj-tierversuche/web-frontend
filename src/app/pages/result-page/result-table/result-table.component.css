@@ -6,8 +6,11 @@ td {
   width: 15%;
 }
 
-#article-use {
+#article-PMID {
   width: 15%;
+  position: relative;
+  height: 100px;
+
 }
 
 #article-information {
