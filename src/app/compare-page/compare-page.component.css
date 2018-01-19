@@ -151,7 +151,7 @@
 }
 
 #feedback-button:hover > #feedback-arrow {
-  content:url("../../assets/ICONS/feedbackArrowHover.png");
+  content:url("assets/ICONS/feedbackArrowHover.png");
   position: relative;
   top: 3px;
 }
