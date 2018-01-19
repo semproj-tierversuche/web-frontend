@@ -2,7 +2,7 @@
   <meta name="viewport" content="width=device-width">
 </head>
 
-<nav id="navigation" class="middle">
+<nav *ngIf="this.router.url !== '/print'" id="navigation" class="middle">
   <ul class="primary">
     <li style="float:left">
       <div id="navigation-text">semantic search for alternative methods to animal testing</div>

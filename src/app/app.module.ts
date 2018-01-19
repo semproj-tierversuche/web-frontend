@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
 import { FeedbackComponent } from './pages/result-page/result-table/compare-page/feedback/feedback.component';
+import { PrintViewComponent } from './pages/result-page/print-view/print-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FeedbackComponent } from './pages/result-page/result-table/compare-page
     AboutPageComponent,
     InfoPageComponent,
     ConfirmationComponentComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    PrintViewComponent
   ],
   imports: [
     BrowserModule,

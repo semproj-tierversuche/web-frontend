@@ -6,13 +6,15 @@ import {ResultPageComponent} from './pages/result-page/result-page.component';
 import {SearchpageComponent} from './pages/search-page/searchpage.component';
 import {AboutPageComponent} from './pages/about-page/about-page.component';
 import {InfoPageComponent} from './pages/info-page/info-page.component';
+import {PrintViewComponent} from './pages/result-page/print-view/print-view.component';
 
 const appRoutes: Routes = [
   { path: 'result/:id', component: ResultPageComponent },
   { path: 'search', component: SearchpageComponent },
-  {path: 'about', component: AboutPageComponent},
-  {path: 'info', component: InfoPageComponent},
-  {path: '**', redirectTo: 'search' }
+  { path: 'about', component: AboutPageComponent },
+  { path: 'info', component: InfoPageComponent },
+  { path: 'print', component: PrintViewComponent },
+  { path: '**', redirectTo: 'search' }
 ];
 
 @NgModule({
