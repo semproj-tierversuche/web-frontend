@@ -43,12 +43,12 @@ export class SearchFieldComponent implements OnInit {
   showErrorMessage() {
     document.getElementById('error-message').style.opacity = '1';
     document.getElementById('text-line').style.borderColor = 'rgba(255, 9, 12, 0.8)';
-    (<HTMLImageElement>document.getElementById('search-icon')).src = '../../assets/ICONS/searchIconRed.png';
+    (<HTMLImageElement>document.getElementById('search-icon')).src = 'assets/ICONS/searchIconRed.png';
 
     setTimeout(function () {
       document.getElementById('error-message').style.opacity = '0';
       document.getElementById('text-line').style.borderColor = '#000000';
-      (<HTMLImageElement>document.getElementById('search-icon')).src = '../../assets/ICONS/searchIcon.png';
+      (<HTMLImageElement>document.getElementById('search-icon')).src = 'assets/ICONS/searchIcon.png';
       }, 2500);
   }
 
