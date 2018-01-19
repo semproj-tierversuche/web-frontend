@@ -1,11 +1,11 @@
-///<reference path="../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
+///<reference path="../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { Origin, Result } from '../common/middleware.data';
+import { Origin, Result } from '../../common/middleware.data';
 import { Router } from '@angular/router';
-import { MiddlewareService } from '../services/middleware.service';
+import { MiddlewareService } from '../../services/middleware.service';
 import { MatDialog } from '@angular/material';
-import {ConfirmationComponentComponent} from '../confirmation-component/confirmation-component.component';
-import {SearchFieldComponent} from '../search-field/search-field.component';
+import {ConfirmationComponentComponent} from './confirmation-component/confirmation-component.component';
+import {SearchFieldComponent} from './search-field/search-field.component';
 
 @Component({
   selector: 'app-searchpage',

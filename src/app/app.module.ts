@@ -4,23 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { MiddlewareService} from './services/middleware.service';
 import { AppComponent } from './app.component';
-import { SearchpageComponent } from './searchpage/searchpage.component';
-import { SearchFieldComponent } from './search-field/search-field.component';
-import { ResultTableComponent } from './result-table/result-table.component';
-import { ResultPageComponent } from './result-page/result-page.component';
-import { ComparePageComponent } from './compare-page/compare-page.component';
+import { SearchpageComponent } from './pages/search-page/searchpage.component';
+import { SearchFieldComponent } from './pages/search-page/search-field/search-field.component';
+import { ResultTableComponent } from './pages/result-page/result-table/result-table.component';
+import { ResultPageComponent } from './pages/result-page/result-page.component';
+import { ComparePageComponent } from './pages/result-page/result-table/compare-page/compare-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialAngularModule } from './material/material.angular';
-import { RouterModule, Routes } from '@angular/router';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { InfoPageComponent } from './info-page/info-page.component';
-import { ConfirmationComponentComponent } from './confirmation-component/confirmation-component.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { InfoPageComponent } from './pages/info-page/info-page.component';
+import { ConfirmationComponentComponent } from './pages/search-page/confirmation-component/confirmation-component.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackComponent } from './pages/result-page/result-table/compare-page/feedback/feedback.component';
+import { PrintViewComponent } from './pages/result-page/print-view/print-view.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     AboutPageComponent,
     InfoPageComponent,
     ConfirmationComponentComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    PrintViewComponent
   ],
   imports: [
     BrowserModule,

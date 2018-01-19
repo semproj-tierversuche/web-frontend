@@ -2,7 +2,7 @@
   <meta name="viewport" content="width=device-width">
 </head>
 
-<nav id="navigation" class="middle">
+<nav *ngIf="router.url !== '/print'" id="navigation" class="middle">
   <ul class="primary">
     <li style="float:left">
       <div id="navigation-text">semantic search for alternative methods to animal testing</div>
@@ -13,7 +13,7 @@
     <li >
       <a routerLink="/info" routerLinkActive="active">INFO</a>
     </li>
-    <li >
+    <li *ngIf="middlewareDataService.middlewareData != null" >
       <a [routerLink]="['/result', '']" routerLinkActive="active">RESULT</a>
     </li>
     <li >
