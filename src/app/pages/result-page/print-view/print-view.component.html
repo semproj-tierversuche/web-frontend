@@ -1,3 +1,40 @@
-<p>
-  print-view works!
-</p>
+<div id="navigation-text">
+  semantic search for alternative methods to animal testing
+</div>
+
+<img id="logo" src="../../../../assets/images/logo1.png" height="443" width="443"/>
+
+<div id="information-block">
+  {{CurrentTime | date:'medium'}}
+  <p style="margin-top: 0px; margin-bottom: 0px">Pre-filter used for the research:  </p>
+  <p style="margin-top: 0px; margin-bottom: 0px">Technical restrictions during the research: </p>
+  <p style="margin-top: 0px; margin-bottom: 0px">Databases used for the research:  </p>
+
+  <div id="vertical"></div>
+
+
+
+  </div>
+
+<div  id="centered">
+  <p>Results for PMID: {{resultData.Origin.PMID}}  {{resultData.Origin.Title}} {{resultData.Origin.Date}}</p>
+<table class="table table-hover">
+<thead id="menu">
+<td style="width: 20px">Relevance</td>
+<td style="width: 2px">PMID</td>
+<td style="width: 15px">Info</td>
+</thead>
+  <tbody>
+    <tr *ngFor="let data of resultData.Results">
+      <td id="article-score"> <p style="margin-bottom: 0px; margin-top: 10px">{{ChangeToPercentage(data.Matching.Relevance)}}% </p></td>
+      <td id="article-PMID"> <p style="margin-bottom: 0px; margin-top: 0px">{{data.Record.PMID}}</p> </td>
+
+      <td>
+        <p style="margin-bottom: 0px; margin-top: 10px">{{data.Record.Title}}, {{data.Record.Date}}</p>
+        <p style="margin-bottom: 0px; margin-top: 10px"> {{data.Record.Authors}}</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

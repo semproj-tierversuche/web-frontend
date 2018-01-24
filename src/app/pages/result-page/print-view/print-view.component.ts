@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MiddlewareService} from '../../../services/middleware.service';
 import {MiddlewareData} from '../../../common/middleware.data';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-print-view',
@@ -8,6 +9,7 @@ import {MiddlewareData} from '../../../common/middleware.data';
   styleUrls: ['./print-view.component.css']
 })
 export class PrintViewComponent implements OnInit {
+  CurrentTime = Date.now();
 
   resultData: MiddlewareData;
 
@@ -15,6 +17,9 @@ export class PrintViewComponent implements OnInit {
 
   ngOnInit() {
     this.resultData = this.middlewareService.middlewareData;
+    // window.print();
   }
-
+  ChangeToPercentage(Percentage: number) {
+    return Percentage * 100;
+  }
 }
