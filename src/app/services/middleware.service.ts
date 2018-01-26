@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {MiddlewareData, Origin} from '../common/middleware.data';
+import {MiddlewareData, Origin, Result} from '../common/middleware.data';
 import {Observable} from 'rxjs/Observable';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Subject} from 'rxjs/Subject';
 
 @Injectable()
@@ -10,8 +10,10 @@ export class MiddlewareService {
   private static middlewareUrl = 'https://141.20.31.92/frontend-api/';
   private static documentAPI = 'document/';
   private static resultAPI = 'results/';
+  private static feedbackAPI = 'feedback';
 
   middlewareData: MiddlewareData;
+  currentResult: Result;
 
   constructor(private http: HttpClient) {
   }
@@ -36,6 +38,13 @@ export class MiddlewareService {
 
   getResults(pmid: number): Observable<MiddlewareData> {
     return this.http.get<MiddlewareData>(MiddlewareService.middlewareUrl + MiddlewareService.resultAPI + pmid);
+  }
+
+  postFeedback(feedback: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    this.http.post(MiddlewareService.middlewareUrl + MiddlewareService.feedbackAPI, feedback, httpOptions).subscribe( next => console.log(next), error => console.log(error));
   }
 
   confirmMiddlewareData(data: MiddlewareData) {

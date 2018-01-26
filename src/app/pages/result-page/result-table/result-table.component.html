@@ -3,9 +3,12 @@
 
 <table class="table table-hover">
   <tbody>
+
+  <!-- iteration through the data set-->
  <tr *ngFor="let data of middlewareData.Results">
 
-    <!-- add green percentage bar-->
+   <!-- relevance column-->
+   <!-- add green percentage bar-->
     <td id="article-score">
       <div *ngIf="data.Matching.Relevance>=0.7" class="w3-light-grey PercentageBarBackgroundGreen" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
         <div class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
@@ -28,17 +31,21 @@
       </div>
     </td>
 
-    <td id="article-use">
-      <p>{{OutputTypeOfTest(data.Matching.AnimalTest)}}</p>
+   <!-- PMID column-->
+   <td id="article-PMID">
+      <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
+        {{data.Record.PMID}} </a></p>
     </td>
 
-    <td id="article-information">
+   <!-- title etc. column-->
+   <td id="article-information">
       <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
         {{data.Record.Title}} </a></p>
       <p>{{data.Record.Date}}</p>
       <p id="authors">{{data.Record.Authors}}</p>
     </td>
 
+   <!-- compare click column -->
     <td id="search-details"><img (click)="compareClicked(data)" src="assets/ICONS/SearchIcon.ico"/>
     </td>
   </tr>

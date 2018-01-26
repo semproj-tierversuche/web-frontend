@@ -1,0 +1,68 @@
+#navigation-text {
+  position: absolute;
+  width: 170px;
+  font: 17px "Heiti SC", sans-serif;
+  font-weight: lighter;
+  line-height: 24px;
+  cursor: default;
+  user-select: none;
+}
+#logo {
+  position: absolute;
+  left:270px;
+  width: 100px;
+  height:100px;
+
+}
+
+#table {
+  border-collapse: separate;
+  border-spacing: 0px;
+
+}
+#menu div {
+  display: inline-block;
+  padding: 4px 0px;
+  text-align: left;
+}
+#centered {
+  position: relative;
+  top: 180px;
+  margin: 10px;
+  right: 50px;
+  left: -10px;
+}
+#horizontal
+{
+  width: 200px;
+  border-top: 1px solid blue;
+  position: absolute;
+  top: 50px;
+}
+
+#information-block {
+  position: relative;
+  top: 170px;
+  left: 0px;
+}
+
+
+#article-score {
+  width: 5%;
+}
+
+#article-PMID {
+  width: 10%;
+  position: relative;
+  height: 100px;
+
+}
+
+#article-information {
+  width: 50%;
+}
+
+
+#authors {
+  font-size: 9px;
+}

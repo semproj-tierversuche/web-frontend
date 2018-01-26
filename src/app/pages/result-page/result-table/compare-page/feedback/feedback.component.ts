@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MiddlewareService} from '../../../../../services/middleware.service';
 
 @Component({
   selector: 'app-feedback',
@@ -13,7 +14,7 @@ export class FeedbackComponent implements OnInit {
   userMessage: string;
   feedbackSubmitted = false;
 
-  constructor() { }
+  constructor(private middlewareService: MiddlewareService) { }
 
   ngOnInit() {
   }
@@ -57,10 +58,16 @@ export class FeedbackComponent implements OnInit {
   submitFeedback() {
     if (this.isEverythingAnswered()) {
       // save feedbackReview somewhere after
-      const feedbackReview = 'AnimalTesting: ' + this.isAnimalTesting + '\n' +
-        'Similarity:' + this.isSimilar + '\n' +
-        'Relevancy:' + this.isRelevant + '\n' +
-        'Message:' + this.userMessage + '\n';
+      const feedback = {
+        'Similar': this.isSimilar,
+        'Origin-PMID': this.middlewareService.middlewareData.Origin.PMID,
+        'Text': this.userMessage,
+        'Result-PMID': this.middlewareService.currentResult.Record.PMID,
+        'Relevant': this.isRelevant,
+        'AnimalTest': this.isAnimalTesting
+      };
+
+      this.middlewareService.postFeedback(feedback);
       this.feedbackSubmitted = true;
     }
   }
