@@ -34,11 +34,11 @@ export class ResultTableComponent implements OnInit {
 
   compareClicked(data: Result) {
     const inputPublication = this.middlewareData.Origin;
-    const matchedPublication = data;
+    this.middlewareService.currentResult = data;
     this.dialog.open(ComparePageComponent, {
       panelClass: 'compare-page-dialog',
       data: { input: inputPublication,
-        matched: matchedPublication }
+        matched: data }
     });
   }
 
