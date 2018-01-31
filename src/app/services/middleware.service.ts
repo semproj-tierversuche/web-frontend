@@ -25,7 +25,7 @@ export class MiddlewareService {
     });
   }
 
-    getExampleInputMetaData(pmid: number): Observable<Origin> {
+  getExampleInputMetaData(pmid: number): Observable<Origin> {
     return Observable.create(observer => {
       observer.next(this.exampleOriginData());
       observer.complete();

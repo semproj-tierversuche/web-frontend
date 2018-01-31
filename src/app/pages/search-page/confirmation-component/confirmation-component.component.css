@@ -5,16 +5,15 @@
 
 .header {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 auto;
   text-align: center;
   padding: 7px;
 }
 
 #article-information {
-  font: 15px "Heiti SC", sans-serif;
+  font: 18px 'Lato', sans-serif;
   font-weight: lighter;
-  height: 200px;
   overflow-y: auto;
   width: 90%;
   margin: auto;
@@ -35,7 +34,6 @@
   color: #686868;
 }
 
-
 #button-wrapper {
   height: 40px;
   width: 300px;
@@ -53,3 +51,8 @@ button:hover {
   background-color: #787878;
 }
 
+@media screen and (max-width: 400px) {
+  #button-wrapper {
+    width: 200px;
+  }
+}

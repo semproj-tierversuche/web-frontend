@@ -1,14 +1,19 @@
 #navigation {
   width: 86%;
   top: 25px;
-  min-width: 550px;
+}
+
+#nav-icon {
+  display: none;
+  position: relative;
+  top: -5px;
 }
 
 #navigation-text {
   position: relative;
-  width: 170px;
-  font: 17px "Heiti SC", sans-serif;
-  font-weight: lighter;
+  width: 200px;
+  font: 17px 'Poppins', sans-serif;
+  font-weight: 400;
   line-height: 24px;
   cursor: default;
   user-select: none;
@@ -26,8 +31,8 @@ li {
 }
 
 li a{
-  font: 15px "Heiti SC", sans-serif;
-  font-weight: bold;
+  font: 16px 'Lato', sans-serif;
+  font-weight: 400;
   display: block;
   color: black;
   text-align: center;
@@ -37,16 +42,62 @@ li a{
   margin-right: 3px;
   margin-top: 25px;
   margin-bottom: 25px;
-  border-top: solid transparent 2px;
+  border-top: solid transparent 1px;
   user-select: none;
 }
 
-li a:hover {
-  border-top: solid black 2px;
+li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width .1s;
+}
+
+li a:hover::after {
+  width: 100%;
+}
+
+li #nav-icon:hover {
+  border-top: solid transparent 1px;
+  background: transparent;
 }
 
 .middle {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+}
+
+@media screen and (max-width: 650px) {
+  #navigation a {display: none}
+  #navigation #nav-icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .responsive {
+    background-color: white;
+    height: calc(100% - 25px);
+    z-index: 10;
+  }
+  #navigation.responsive .nav-options a {
+    display: block;
+    font-size: 25px;
+    font-family: sans-serif;
+    margin: 5% 0px 5% 0px;
+    color: black;
+  }
+
+  #navigation.responsive .nav-options a:hover {
+    color: #626262;
+    border-top: solid 1px transparent;
+  }
+
+  .responsive .nav-options li {
+    width: 100%;
+  }
 }

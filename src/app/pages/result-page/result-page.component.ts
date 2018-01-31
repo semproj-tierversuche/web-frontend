@@ -37,9 +37,4 @@ export class ResultPageComponent implements OnInit {
     });
   }
 
-  // function to export result table as PDF file
-  exportPdf() {
-
-  }
-
 }

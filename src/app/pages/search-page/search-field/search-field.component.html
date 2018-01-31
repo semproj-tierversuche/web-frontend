@@ -5,17 +5,9 @@
     <input #searchBox (keyup.enter)="enterPmid(searchBox.value)" id="text-line" placeholder="PMID : 25684017" autofocus />
 
     <button (click)= "enterPmid(searchBox.value)" id="search-button" >
-      <img id="search-icon" width="25px" src="assets/ICONS/searchIcon.png"/>
+      <img id="search-icon" width="90%" src="assets/ICONS/searchIcon.png"/>
     </button>
   </div>
-
-  <!--
-  <input #searchBox (keyup.enter)="enterPmid(searchBox.value)" id="text-line" placeholder="PMID : 25684017" autofocus />
-
-  <button (click)= "enterPmid(searchBox.value)" id="search-button" >
-    <img id="search-icon" width="23px" src="assets/ICONS/searchIcon.png"/>
-  </button>
-  //-->
 
   <!-- Example Button and its Menu -->
   <button mat-button [matMenuTriggerFor]="menu" id="example-button">examples</button>
@@ -25,30 +17,26 @@
       <p class="example-text">PMID: 11489449<br>
         Neuroprotection by memantine, a non-competitive NMDA receptor antagonist after traumatic brain injury in rats.
       </p>
+      <div class="grey-borders"></div>
     </div>
 
     <div id="item2" class ="menu-items" (click)="exampleInput('11932745')">
       <p class="example-text">PMID: 11932745<br>
         Naturally secreted oligomers of amyloid beta protein potently inhibit hippocampal long-term potentiation in vivo.
       </p>
+      <div class="grey-borders"></div>
     </div>
 
     <div id="item3" class ="menu-items" (click)="exampleInput('21494637')">
       <p class="example-text">PMID: 21494637<br>
         Dopaminergic neuronal loss, reduced neurite complexity and autophagic abnormalities in transgenic mice expressing G2019S mutant LRRK2.
       </p>
+      <div class="grey-borders"></div>
     </div>
-
-    <div id="item4" class ="menu-items" (click)="exampleInput('16192371')">
-      <p class="example-text">PMID: 16192371<br>
-        Encoding of movement direction in different frequency ranges of motor cortical local field potentials.
-      </p>
-    </div>
-
   </mat-menu>
 
-  <!-- Error message. First hidden, shows up when pmid is not valid -->
-  <div id="error-message" >given pubMed ID does not exist</div>
+  <!-- Error message. First hidden, shows up if input is not valid -->
+  <div id="error-message" >PMID does not exist</div>
 
 </div>
 

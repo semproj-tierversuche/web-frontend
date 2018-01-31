@@ -1,5 +1,5 @@
 td {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #article-score {
@@ -10,29 +10,42 @@ td {
   width: 15%;
   position: relative;
   height: 100px;
-
+  text-align: center;
 }
 
 #article-information {
   width: 50%;
 }
+a:hover {
+  text-decoration: none;
+}
+a:hover p{
+  color: black;
+}
+a:hover .ref{
+  color: #0000EE;
+}
 
 #search-details {
   width: 15%;
+  text-align: center;
 }
 
 #authors {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 #search-details img {
   width: 25px;
   height: 25px;
-  position: relative;
-  top: 30px;
-  display: block;
-  margin: 0px auto;
   cursor: pointer;
+}
+#search-details .feedback-icon {
+  float: right;
+  margin-left: 40px;
+}
+#search-details div {
+  display: inline-block;
 }
 
 .PercentageBarBackgroundGreen{
@@ -68,3 +81,28 @@ td {
 .lowPercentage {
   background-color: #ff4819;
 }
+
+@media screen and (max-width: 830px) {
+  #search-details div {
+    width: 25px;
+  }
+  #search-details img {
+    margin: 0;
+  }
+  #search-details .feedback-icon {
+    margin-top: 40px;
+  }
+  #article-PMID {
+    font-size: 12px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #article-score {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #article-information {
+    font-size: 12px;
+  }
+}
+

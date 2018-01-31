@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+.confirmation-dialog .mat-dialog-container {
+  max-width: 700px;
+}
 .compare-page-dialog .mat-dialog-container {
   width: 750px;
   height: 600px;
@@ -9,7 +11,36 @@
   padding: 0px;
 }
 
-.confirmation-dialog .mat-dialog-container {
-  height: 300px;
-  width: 600px;
+@media screen and (max-width: 800px) {
+  .compare-page-dialog .mat-dialog-container {
+    width: 450px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .compare-page-dialog .mat-dialog-container {
+    width: 350px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .compare-page-dialog .mat-dialog-container {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+.feedback-dialog .mat-dialog-container {
+  width: 500px;
+  height: 400px;
+  padding: 0;
+  border: none;
+}
+
+@media screen and (max-width: 560px) {
+  .feedback-dialog .mat-dialog-container {
+    width: 300px;
+  }
 }

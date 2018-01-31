@@ -1,0 +1,42 @@
+<div id="feedback-box">
+
+  <button class="close-button" (click)="close()">X</button>
+
+  <div id="feedback-content" *ngIf="!feedbackSubmitted">
+
+    <div class="questions">
+      <p>Does this article describe <span id="headerAnimalTest">animal testing</span>?</p>
+      <button id="animal-testing-no" class ="feedback-icons negative" (click) = "checkAnimalTesting(false)"><img width="20px" height="20px" src="assets/ICONS/feedback/negative.png"/></button>
+      <button id="animal-testing-yes" class ="feedback-icons positive" (click) = "checkAnimalTesting(true)"><img width="25px" height="25px" src="assets/ICONS/feedback/positive.png"/></button>
+
+    </div>
+
+    <div class="questions">
+      <p>Are publications <span id="headerSimilar">similar</span>?</p>
+      <button id="similar-no" class ="feedback-icons negative" (click) = "checkSimilar(false)"><img width="20px" height="20px" src="assets/ICONS/feedback/negative.png"/></button>
+      <button id="similar-yes" class ="feedback-icons positive" (click) = "checkSimilar(true)"><img width="25px" height="25px" src="assets/ICONS/feedback/positive.png"/></button>
+
+    </div>
+
+    <div class="questions">
+      <p>Are publications <span id="headerRelevant">relevant</span>?</p>
+      <button id="relevant-no" class ="feedback-icons negative" (click) = "checkRelevant(false)"><img width="20px" height="20px" src="assets/ICONS/feedback/negative.png"/></button>
+      <button id="relevant-yes" class ="feedback-icons positive" (click) = "checkRelevant(true)"><img width="25px" height="25px" src="assets/ICONS/feedback/positive.png"/></button>
+
+    </div>
+
+    <label for="user-message">Do you have any additional feedback for us? (optional)</label>
+    <textarea name="text" id="user-message"></textarea>
+
+    <button mat-button id="submit-feedback" (click)="submitFeedback()">Submit Feedback</button>
+
+  </div>
+
+  <div id="after-submit-content" *ngIf="feedbackSubmitted">
+    <p>Your feedback has been submitted</p>
+    <div id="spinner"></div>
+    <img width="75px" height="75px" src="assets/ICONS/feedback/positive.png"/>
+    <div id="go-back-ref" (click)="goBack()">Go back</div>
+  </div>
+
+</div>

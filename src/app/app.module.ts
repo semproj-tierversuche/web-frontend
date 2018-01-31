@@ -18,8 +18,8 @@ import { ConfirmationComponentComponent } from './pages/search-page/confirmation
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
-import { MatMenuModule } from '@angular/material';
-import { FeedbackComponent } from './pages/result-page/result-table/compare-page/feedback/feedback.component';
+import { MatMenuModule, MatTooltipModule } from '@angular/material';
+import { FeedbackComponent } from './pages/result-page/result-table/feedback/feedback.component';
 import { PrintViewComponent } from './pages/result-page/print-view/print-view.component';
 
 @NgModule({
@@ -45,12 +45,14 @@ import { PrintViewComponent } from './pages/result-page/print-view/print-view.co
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule,
   ],
 
   entryComponents: [
     ComparePageComponent,
-    ConfirmationComponentComponent
+    ConfirmationComponentComponent,
+    FeedbackComponent
   ],
 
   providers: [MiddlewareService],
