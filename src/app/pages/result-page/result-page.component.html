@@ -2,11 +2,13 @@
 <div id="content" class="middle">
 
   <!-- Menu line -->
-    <div id="menu">
+    <div id="menu" class="menu" (click)="expandMenu()">
+      <p class="given-pmid">Search results for PMID: {{pmid}}</p>
       <div id="relevance" style="width: 15%"><span>Relevance</span></div>
       <div id="pmid" style="width: 15%">PMID</div>
       <div id="article" style="width: 50%"><span>Article information</span></div>
-      <div id="details" style="width: 15%; text-align: right"><span>Search details</span></div>
+      <div id="details" style="width: 14%; text-align: right"><span>Details</span></div>
+
     </div>
 
   <!-- Result/Output List Table -->

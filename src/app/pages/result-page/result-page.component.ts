@@ -37,4 +37,13 @@ export class ResultPageComponent implements OnInit {
     });
   }
 
+  expandMenu() {
+    const x = document.getElementById('menu');
+    if (x.className === 'menu') {
+      x.className += ' menu-extended';
+    } else {
+      x.className = 'menu';
+    }
+  }
+
 }

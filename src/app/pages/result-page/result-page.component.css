@@ -1,24 +1,54 @@
+.given-pmid {
+  font: 15px 'Lato', sans-serif;
+  font-weight: 300;
+  margin-right: 5%;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
 #content {
   top: 110px;
   height: 80%;
   width: 86%;
 }
 
-#menu {
-  font: 13px "PT Sans", sans-serif;
+.menu {
+  font: 13px "Lato", sans-serif;
   font-weight: 400;
-  height: 22px;
+  height: 20px;
   width: 100%;
   background-color: #bcbcbc;
   user-select: none;
-  border-width: 0px;
+  border:none;
   border-radius: 5px 5px 0px 0px;
+  transition: height 0.1s linear;
+  cursor: default;
+}
+.menu div {
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
 }
 
-#menu div {
-  display: inline-block;
-  padding: 4px 0px;
-  text-align: center;
+.menu-extended div {
+  animation: easein 1s;
+  opacity: 1;
+}
+
+@keyframes easein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.menu-extended {
+  animation: slideDown 0.1s;
+  height: 40px;
+}
+
+@keyframes slideDown {
+  0% {height: 20px;}
+  30% {height: 30px;}
+  100% {height: 40px;}
 }
 
 #result-table {
@@ -94,5 +124,9 @@
   }
   #details:after{
     content: 'Details';
+  }
+  .given-pmid {
+    font-size: 12px;
+    margin-right: 0;
   }
 }
