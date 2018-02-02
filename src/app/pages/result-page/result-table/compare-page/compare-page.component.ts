@@ -18,7 +18,7 @@ export class ComparePageComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: {input: Origin, matched: Result}) {
     this.inputArticle = data.input;
     this.matchedArticle = data.matched;
-    this.score = data.matched.Matching.Relevance*100;
+    this.score = data.matched.Matching.Relevance * 100;
   }
 
   ngOnInit() {
@@ -26,11 +26,6 @@ export class ComparePageComponent implements OnInit {
 
   close() {
     this.thisDialogRef.close('close');
-  }
-
-  showFeedback() {
-    document.getElementById('container').scrollTo({ left: 0, top: 648, behavior: 'smooth' });
-    document.getElementById('container').style.overflowY = 'scroll';
   }
 
 }

@@ -10,7 +10,7 @@
    <!-- relevance column-->
    <!-- add green percentage bar-->
     <td id="article-score">
-      <div *ngIf="data.Matching.Relevance>=0.7" class="w3-light-grey PercentageBarBackgroundGreen" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+      <div *ngIf="data.Matching.Relevance>=0.7" class="w3-light-grey PercentageBarBackgroundGreen" style ="width: 60%; margin: 0 auto; min-width: 55px;">
         <div class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
           {{data.Matching.Relevance * 100}}%
         </div>
@@ -33,20 +33,24 @@
 
    <!-- PMID column-->
    <td id="article-PMID">
-      <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
-        {{data.Record.PMID}} </a></p>
+      <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}" style="display:block; height: 100%">
+        {{data.Record.PMID}} </a>
     </td>
 
    <!-- title etc. column-->
    <td id="article-information">
-      <p><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
-        {{data.Record.Title}} </a></p>
+     <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{data.Record.PMID}}">
+      <p class="ref">{{data.Record.Title}}</p>
       <p>{{data.Record.Date}}</p>
-      <p id="authors">{{data.Record.Authors}}</p>
+      <p id="authors">{{data.Record.Authors}}</p></a>
     </td>
 
    <!-- compare click column -->
-    <td id="search-details"><img (click)="compareClicked(data)" src="assets/ICONS/SearchIcon.ico"/>
+    <td id="search-details">
+      <div>
+        <img matTooltip="compare view" (click)="openCompareView(data)" src="assets/ICONS/compare-view-icon.png"/>
+        <img class = "feedback-icon" (click)="openFeedback(data)" matTooltip="feedback" src="assets/ICONS/feedback-icon.png"/>
+      </div>
     </td>
   </tr>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MiddlewareService} from '../../../../../services/middleware.service';
+import { MiddlewareService } from '../../../../services/middleware.service';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-feedback',
@@ -14,7 +15,7 @@ export class FeedbackComponent implements OnInit {
   userMessage: string;
   feedbackSubmitted = false;
 
-  constructor(private middlewareService: MiddlewareService) { }
+  constructor(private middlewareService: MiddlewareService, public thisDialogRef: MatDialogRef<FeedbackComponent>) { }
 
   ngOnInit() {
   }
@@ -23,10 +24,10 @@ export class FeedbackComponent implements OnInit {
     this.isAnimalTesting = userSelection;
     if (userSelection === true) {
       document.getElementById('animal-testing-yes').style.backgroundColor = '#4CAF50';
-      document.getElementById('animal-testing-no').style.backgroundColor = 'white';
+      document.getElementById('animal-testing-no').style.backgroundColor = 'transparent';
     }
     if (userSelection === false) {
-      document.getElementById('animal-testing-yes').style.backgroundColor = 'white';
+      document.getElementById('animal-testing-yes').style.backgroundColor = 'transparent';
       document.getElementById('animal-testing-no').style.backgroundColor = '#fa8686';
     }
   }
@@ -35,10 +36,10 @@ export class FeedbackComponent implements OnInit {
     this.isSimilar = userSelection;
     if (userSelection === true) {
       document.getElementById('similar-yes').style.backgroundColor = '#4CAF50';
-      document.getElementById('similar-no').style.backgroundColor = 'white';
+      document.getElementById('similar-no').style.backgroundColor = 'transparent';
     }
     if (userSelection === false) {
-      document.getElementById('similar-yes').style.backgroundColor = 'white';
+      document.getElementById('similar-yes').style.backgroundColor = 'transparent';
       document.getElementById('similar-no').style.backgroundColor = '#fa8686';
     }
   }
@@ -47,17 +48,16 @@ export class FeedbackComponent implements OnInit {
     this.isRelevant = userSelection;
     if (userSelection === true) {
       document.getElementById('relevant-yes').style.backgroundColor = '#4CAF50';
-      document.getElementById('relevant-no').style.backgroundColor = 'white';
+      document.getElementById('relevant-no').style.backgroundColor = 'transparent';
     }
     if (userSelection === false) {
-      document.getElementById('relevant-yes').style.backgroundColor = 'white';
+      document.getElementById('relevant-yes').style.backgroundColor = 'transparent';
       document.getElementById('relevant-no').style.backgroundColor = '#fa8686';
     }
   }
 
   submitFeedback() {
     if (this.isEverythingAnswered()) {
-      // save feedbackReview somewhere after
       const feedback = {
         'Similar': this.isSimilar,
         'Origin-PMID': this.middlewareService.middlewareData.Origin.PMID,
@@ -66,42 +66,43 @@ export class FeedbackComponent implements OnInit {
         'Relevant': this.isRelevant,
         'AnimalTest': this.isAnimalTesting
       };
-
+      console.log(feedback);
       this.middlewareService.postFeedback(feedback);
       this.feedbackSubmitted = true;
     }
   }
 
   isEverythingAnswered() {
-     let questionsAnswered = true;
+    let questionsAnswered = true;
 
     if (this.isAnimalTesting === undefined) {
-      document.getElementById('headerAnimalTest').style.color = '#C70039';
+      document.getElementById('headerAnimalTest').className = 'red';
       questionsAnswered = false;
     }
     if (this.isSimilar === undefined) {
-      document.getElementById('headerSimilar').style.color = '#C70039';
+      document.getElementById('headerSimilar').className = 'red';
       questionsAnswered = false;
     }
     if (this.isRelevant === undefined) {
-      document.getElementById('headerRelevant').style.color = '#C70039';
+      document.getElementById('headerRelevant').className = 'red';
       questionsAnswered = false;
     }
-
     this.userMessage = (<HTMLTextAreaElement>document.getElementById('user-message')).value;
-
-    setTimeout(function () {
-      document.getElementById('headerAnimalTest').style.color = '#ffffff';
-      document.getElementById('headerSimilar').style.color = '#ffffff';
-      document.getElementById('headerRelevant').style.color = '#ffffff';
-    }, 2000);
-
+    if (!questionsAnswered) {
+      setTimeout(function () {
+        document.getElementById('headerAnimalTest').className = '';
+        document.getElementById('headerSimilar').className = '';
+        document.getElementById('headerRelevant').className = '';
+      }, 2000);
+    }
     return questionsAnswered;
   }
 
+  close() {
+    this.thisDialogRef.close('close');
+  }
   goBack() {
-    document.getElementById('container').scrollTo({ left: 0, top: 0, behavior: 'smooth' });
-    document.getElementById('container').style.overflowY = 'hidden';
+    this.close();
   }
 
 }

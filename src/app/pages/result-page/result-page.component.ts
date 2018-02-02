@@ -37,9 +37,13 @@ export class ResultPageComponent implements OnInit {
     });
   }
 
-  // function to export result table as PDF file
-  exportPdf() {
-
+  expandMenu() {
+    const x = document.getElementById('menu');
+    if (x.className === 'menu') {
+      x.className += ' menu-extended';
+    } else {
+      x.className = 'menu';
+    }
   }
 
 }

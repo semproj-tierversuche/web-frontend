@@ -4,7 +4,6 @@ import { Component, Output, OnInit, EventEmitter, ViewEncapsulation } from '@ang
   selector: 'app-search-field',
   templateUrl: './search-field.component.html',
   styleUrls: ['./search-field.component.css'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class SearchFieldComponent implements OnInit {
 
@@ -63,5 +62,6 @@ export class SearchFieldComponent implements OnInit {
   // Shows example pmid in input field after choosing it from examples menu
   exampleInput(exampleId) {
     (<HTMLInputElement>document.getElementById('text-line')).value = exampleId;
+    (<HTMLInputElement>document.getElementById('text-line')).focus();
   }
 }

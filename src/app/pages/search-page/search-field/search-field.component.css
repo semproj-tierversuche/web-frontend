@@ -1,36 +1,33 @@
-#input-box {
-  width: 370px;
-}
 
 #text-line {
   background-color: transparent;
-  font: 18px "Heiti SC";
-  font-weight: lighter;
+  font: 18px sans-serif;
+  font-weight: 300;
   text-align: center;
   color: #000000;
   outline: none;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid rgba(4, 4, 4, 0.6) 2px;
-  width: 320px;
+  border-bottom: solid rgba(28, 28, 28, 0.6) 2px;
+  width: 85%;
   height: 35px;
 }
 
 #search-button {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 25px;
+  height: 25px;
   position: relative;
   left: -30px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
+  padding: 0px;
 }
 
 #search-button:hover > #search-icon{
-  width: 30px;
+  width: 100%;
 }
 
 #search-icon {
@@ -49,18 +46,6 @@
   background: transparent; /* make scrollbar transparent */
 }
 
-.button-small-black {
-  font: 10px Heiti SC;
-  font-weight: lighter;
-  padding: 6px 9px;
-  display:inline-block;
-  text-decoration: none;
-  border-radius: 3px;
-  background-color: #1e1e1e;
-  color: white;
-  border: 0;
-}
-
 button {
   outline: none;
 }
@@ -72,47 +57,60 @@ button {
 
 #error-message {
   opacity: 0;
-  display: inline-block;
-  font-size: 10px;
+  width: 85%;
+  text-align: center;
+  font: 12px sans-serif;
   color: rgba(255, 9, 12, 0.8);
   transition: opacity 0.5s ease-out;
   position: relative;
-  top: 40px;
-  margin: 0 auto;
+  top: 30%;
 }
 
 #example-button {
-  font: 13px "Heiti SC";
+  font: 14px 'Poppins', sans-serif;
+  height: 21px;
+  width: 80px;
   position: relative;
   background-color: #bcbcbc;
-  padding: 5px 10px;
+  padding: 0px 0px;
   top: 5px;
 }
 
 .menu-items {
-  height: 80px;
-  width: 330px;
-  font-size: 10px;
+  font: 13px 'PT Sans', sans-serif;
+  font-weight: 400;
   text-align: center;
   user-select: none;
   cursor: pointer;
-  padding: 0px 5px;
 }
 
 .menu-items:hover {
   background-color: #9ad3de;
 }
 
+.grey-borders {
+  margin: 0px auto;
+  position: relative;
+  top: -10px;
+  width: 70%;
+  height: 2px;
+  background-color: #699198;
+  opacity: 0;
+  transition: opacity 0.3s, ease-in;
+}
+
+.menu-items:hover .grey-borders {
+  opacity: 1;
+}
+
 #search-field-wrapper {
   position: relative;
-  left: 20px;
-  width: 340px;
   height: 60px;
+  left: 5%;
   user-select: none;
 }
 
-.mat-menu-panel.example-menu {
-  max-width: none;
-  width: 340px;
-  height: 240px;
+.mat-menu-content .example-menu {
+  width: 150px;
 }
+

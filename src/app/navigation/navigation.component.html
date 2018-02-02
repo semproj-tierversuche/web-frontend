@@ -1,24 +1,32 @@
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <meta name="viewport" content="width=device-width">
 </head>
 
 <nav *ngIf="router.url !== '/print'" id="navigation" class="middle">
   <ul class="primary">
     <li style="float:left">
-      <div id="navigation-text">semantic search for alternative methods to animal testing</div>
+      <!--<img width="190px" src="assets/ICONS/logo-text.png"/>//-->
+      <div id="navigation-text">semantic search for alternative methods to animal experements</div>
     </li>
     <li >
-      <a routerLink="/about" routerLinkActive="active">ABOUT</a>
+    <a id="nav-icon" (click)="showNavigation()" ><img width="30px" src="assets/ICONS/nav-ic.png"/></a>
     </li>
-    <li >
-      <a routerLink="/info" routerLinkActive="active">INFO</a>
-    </li>
-    <li *ngIf="middlewareDataService.middlewareData != null" >
-      <a [routerLink]="['/result', '']" routerLinkActive="active">RESULT</a>
-    </li>
-    <li >
-      <a routerLink="/search" routerLinkActive="active">SEARCH</a>
-    </li>
+    <div class="nav-options">
+      <li >
+        <a routerLink="/about" (click)="hideResponsiveNavigation()" routerLinkActive="active">ABOUT</a>
+      </li>
+      <li >
+        <a routerLink="/info" (click)="hideResponsiveNavigation()"routerLinkActive="active">INFO</a>
+      </li>
+      <li *ngIf="middlewareDataService.middlewareData != null" >
+        <a [routerLink]="['/result', '']" (click)="hideResponsiveNavigation()" routerLinkActive="active">RESULT</a>
+      </li>
+      <li >
+        <a routerLink="/search" (click)="hideResponsiveNavigation()" routerLinkActive="active">SEARCH</a>
+      </li>
+    </div>
 </ul>
 </nav>
 
