@@ -1,20 +1,19 @@
 #navigation-text {
   position: absolute;
-  width: 170px;
-  font: 17px "Heiti SC", sans-serif;
+  width: 200px;
+  font: 17px "Poppins", sans-serif;
   font-weight: lighter;
   line-height: 24px;
   cursor: default;
   user-select: none;
+  text-align: center;
+  top: 10px;
 }
-#logo {
+.middle {
   position: absolute;
-  left:270px;
-  width: 100px;
-  height:100px;
-
+  left: 50%;
+  transform: translate(-50%);
 }
-
 #table {
   border-collapse: separate;
   border-spacing: 0px;
@@ -27,7 +26,7 @@
 }
 #centered {
   position: relative;
-  top: 180px;
+  top: 150px;
   margin: 10px;
   right: 50px;
   left: -10px;
@@ -42,7 +41,7 @@
 
 #information-block {
   position: relative;
-  top: 170px;
+  top: 140px;
   left: 0px;
 }
 
