@@ -48,7 +48,7 @@ export class ResultTableComponent implements OnInit {
     });
   }
 
-  ChangePercetageBarWidth(Percentage: number) {
+  changePercetageBarWidth(Percentage: number) {
     return Percentage * 100;
   }
 
