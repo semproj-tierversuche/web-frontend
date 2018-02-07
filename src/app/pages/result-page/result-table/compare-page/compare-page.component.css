@@ -124,10 +124,18 @@
   background-color: white;
   margin: 0 auto;
 }
-.green-bar {
+.percentage-bar {
   animation: fadein;
   height: 100%;
-  background-color: #18a131;
+}
+.green {
+  background-color: #4CAF50;
+}
+.yellow {
+  background: #e2dd5d;
+}
+.red {
+  background-color: #ff4819;
 }
 
 button:focus {outline:0;}

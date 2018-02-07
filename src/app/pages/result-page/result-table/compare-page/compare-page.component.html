@@ -26,7 +26,9 @@
 
       <p class="matching-score">Matching Score: {{score}}%</p>
       <div class="matching-bar">
-        <div class="green-bar" [style.width.%] = "score"></div>
+        <div *ngIf="(score >=70)" class="percentage-bar green" [style.width.%] = "score"></div>
+        <div *ngIf="(score >30 && score <70)" class="percentage-bar yellow" [style.width.%] = "score"></div>
+        <div *ngIf="(score <=30)" class="percentage-bar red" [style.width.%] = "score"></div>
       </div>
     </div>
   </div>
