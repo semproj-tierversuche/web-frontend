@@ -17,7 +17,6 @@
 #table {
   border-collapse: separate;
   border-spacing: 0px;
-
 }
 #menu div {
   display: inline-block;
@@ -31,37 +30,19 @@
   right: 50px;
   left: -10px;
 }
-#horizontal
-{
-  width: 200px;
-  border-top: 1px solid blue;
-  position: absolute;
-  top: 50px;
-}
-
 #information-block {
   position: relative;
   top: 140px;
-  left: 0px;
+  left: 0;
 }
-
-
+table:hover td {
+  background-color: white;
+}
 #article-score {
   width: 5%;
 }
-
 #article-PMID {
   width: 10%;
   position: relative;
   height: 100px;
-
-}
-
-#article-information {
-  width: 50%;
-}
-
-
-#authors {
-  font-size: 9px;
 }
