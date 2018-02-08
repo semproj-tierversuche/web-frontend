@@ -11,23 +11,17 @@
    <!-- add green percentage bar-->
     <td id="article-score">
       <div *ngIf="data.Matching.Relevance>=0.7" class="w3-light-grey PercentageBarBackgroundGreen" style ="width: 60%; margin: 0 auto; min-width: 55px;">
-        <div class="w3-container w3-green w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
-          {{data.Matching.Relevance * 100}}%
-        </div>
+        <div class="w3-container w3-green w3-center" [style.width.%]="changePercetageBarWidth(data.Matching.Relevance)"> <br></div>
       </div>
 
       <!-- add yellow percentage bar-->
       <div *ngIf="data.Matching.Relevance<0.7 && data.Matching.Relevance>0.3" class="w3-light-grey PercentageBarBackgroundYellow" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
-        <div class="w3-container middlePercentage w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
-          {{data.Matching.Relevance * 100}}%
-        </div>
+        <div class="w3-container middlePercentage w3-center" [style.width.%]="changePercetageBarWidth(data.Matching.Relevance)"> <br></div>
       </div>
 
       <!-- add red percentage bar-->
-      <div *ngIf="data.Matching.Relevance<0.3" class="w3-light-grey PercentageBarBackgroundRed" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
-        <div class="w3-container lowPercentage w3-center" [style.width.%]="ChangePercetageBarWidth(data.Matching.Relevance)">   <!--hier dynamische prozentwerte eingeben-->
-          {{data.Matching.Relevance * 100}}%
-        </div>
+      <div *ngIf="data.Matching.Relevance<=0.3" class="w3-light-grey PercentageBarBackgroundRed" style ="width: 60%; margin: 0 auto; position:relative; top: 30px;">
+        <div class="w3-container lowPercentage w3-center" [style.width.%]="changePercetageBarWidth(data.Matching.Relevance)"> <br></div>
       </div>
     </td>
 

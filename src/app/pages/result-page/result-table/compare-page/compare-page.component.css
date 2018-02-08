@@ -71,8 +71,18 @@
   overflow-x: auto;
   padding: 5px 10px 5px 10px;
 }
+
 .abstracts .matched-publication {
   float: right;
+}
+:host ::ng-deep .mesh_headings {
+  background: #f4ef64;
+  color: black;
+}
+
+:host ::ng-deep .annotations {
+  background: #4CAF50;
+  color: black;
 }
 
 .keyword-headers {
@@ -84,6 +94,7 @@
   width: 100%;
   height: 15%;
   margin: 0 auto;
+  color: red;
 }
 .keywords div {
   background-color: white;
@@ -113,10 +124,18 @@
   background-color: white;
   margin: 0 auto;
 }
-.green-bar {
+.percentage-bar {
   animation: fadein;
   height: 100%;
-  background-color: #18a131;
+}
+.green {
+  background-color: #4CAF50;
+}
+.yellow {
+  background: #e2dd5d;
+}
+.red {
+  background-color: #ff4819;
 }
 
 button:focus {outline:0;}

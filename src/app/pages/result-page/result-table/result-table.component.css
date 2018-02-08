@@ -50,35 +50,31 @@ a:hover .ref{
 
 .PercentageBarBackgroundGreen{
   background-color: #ffffff;
-  border-color: #4CAF50;
-  border-width: 1.5px;
-  border-style: solid;
+  border: 2px solid #4CAF50;
 }
 
 .PercentageBarBackgroundYellow{
   background-color: #ffffff;
-  border-color: #e2dd5d;
-  border-width: 1.5px;
-  border-style: solid;
+  border: 2px solid #e2dd5d;
 }
 
 .PercentageBarBackgroundRed{
-  background-color: #e2dd5d;
-  border-color: #4CAF50;
-  border-width: 1.5px;
-  border-style: solid;
+  background-color: #ffffff;
+  border: 2px solid #ff4819;
 }
 
 .highPercentage {
   color:#fff;
-  background-color:#4CAF50
+  background-color:#4CAF50;
 }
 
 .middlePercentage {
+  color:#fff;
   background-color: #e2dd5d;
 }
 
 .lowPercentage {
+  color:#fff;
   background-color: #ff4819;
 }
 

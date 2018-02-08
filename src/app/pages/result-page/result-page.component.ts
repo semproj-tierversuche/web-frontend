@@ -22,7 +22,15 @@ export class ResultPageComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       console.log(params);
       if (params.hasOwnProperty('id')) {
-        this.pmid = +params['id'];
+        if (this.middlewareDataService.middlewareData == null) {
+          this.pmid = +params['id'];
+        } else {
+          if (this.pmid !== 0) {
+            this.pmid = +params['id'];
+          } else {
+            this.pmid = this.middlewareDataService.middlewareData.Origin.PMID;
+          }
+        }
         // This is to check if we came from navigation bar
         if (this.pmid !== 0) {
           this.showLoadingAnimation = true;

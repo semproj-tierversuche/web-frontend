@@ -11,8 +11,8 @@
         <p class="matched-header">Matched publication</p>
       </div>
       <div class="abstracts">
-        <div class="given-publication">{{inputArticle.Abstract}}</div>
-        <div class="matched-publication">{{matchedArticle.Record.Abstract}}</div>
+        <div class="given-publication" [innerHTML] = "inputAbstractHighlighted"></div>
+        <div class="matched-publication" [innerHTML] = "matchedAbstractHighlighted"></div>
       </div>
 
       <div class="headers keyword-headers">
@@ -20,13 +20,15 @@
         <p class="matched-header">KEYWORDS & MESH HEADINGS</p>
       </div>
       <div class="keywords">
-        <div>{{inputArticle.MeshHeadings}}</div>
-        <div class="matched-keywords">{{matchedArticle.Record.MeshHeadings}}</div>
+        <div [innerHTML] = "inputMeshHeadings"></div>
+        <div class="matched-keywords" [innerHTML] = "matchedMeshHeadings"></div>
       </div>
 
       <p class="matching-score">Matching Score: {{score}}%</p>
-      <div class="matching-bar" >
-        <div class="green-bar" [style.width.%] = "score"></div>
+      <div class="matching-bar">
+        <div *ngIf="(score >=70)" class="percentage-bar green" [style.width.%] = "score"></div>
+        <div *ngIf="(score >30 && score <70)" class="percentage-bar yellow" [style.width.%] = "score"></div>
+        <div *ngIf="(score <=30)" class="percentage-bar red" [style.width.%] = "score"></div>
       </div>
     </div>
   </div>
