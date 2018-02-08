@@ -8,7 +8,7 @@
 
 #content {
   top: 110px;
-  height: 80%;
+  height: calc(95% - 110px);
   width: 86%;
 }
 
