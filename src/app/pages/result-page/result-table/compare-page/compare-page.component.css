@@ -140,8 +140,7 @@
 
 button:focus {outline:0;}
 
-@media screen and (max-width: 800px) {
-
+@media screen and (max-width: 880px) {
   .search-details {
     font-size: 15px;
   }
