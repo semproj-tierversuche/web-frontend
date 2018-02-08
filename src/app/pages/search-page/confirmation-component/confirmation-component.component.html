@@ -8,7 +8,8 @@
       <p style="text-align: center">{{metaData.Authors}}</p>
 
       <p class = "header">ID: </p>
-      <p style="text-align: center">{{metaData.PMID}}</p>
+      <a class="hvr-grow" id="article-id" target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{metaData.PMID}}">{{metaData.PMID}}</a>
+
     </div>
     <div id="button-wrapper">
       <button mat-button (click)="goBack()">Go Back</button>
